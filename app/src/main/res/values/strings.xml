@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ChekinPro</string>
     <string name="retroceso">Flecha de retroceso</string>
+    <string name="login_text">¿Ya tienes cuenta? <b>Inicia Sesión</b></string>
+
 
 </resources>

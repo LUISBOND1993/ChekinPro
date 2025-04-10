@@ -13,8 +13,24 @@
         android:layout_width="match_parent"
         android:layout_height="355dp"
         android:scaleType="centerCrop"
+        android:background="@drawable/rounded_top"
         android:src="@drawable/bg_sign_up"
+        android:clipToOutline="true"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="140dp"
+        android:layout_height="155dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/logo_blanco" />
 
     <!-- Scroll de contenido -->
     <ScrollView
@@ -26,97 +42,138 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/formContainer"
+        android:layout_width="318dp"
+        android:layout_height="527dp"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/rounded_background"
+        android:elevation="8dp"
         android:orientation="vertical"
-        android:gravity="center"
-        tools:ignore="MissingConstraints">
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registro"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:text="Registro:"
             android:textColor="@color/black"
-            android:layout_marginBottom="10dp"/>
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:background="@android:drawable/editbox_background"/>
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
             android:hint="Contraseña"
             android:inputType="textPassword"
-            android:background="@android:drawable/editbox_background"/>
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/phoneEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
             android:hint="Teléfono"
             android:inputType="phone"
-            android:background="@android:drawable/editbox_background"/>
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/plateEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
             android:hint="Placa"
-            android:background="@android:drawable/editbox_background"/>
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/conjuntoEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
             android:hint="Conjunto"
-            android:background="@android:drawable/editbox_background"/>
+            android:textSize="15sp" />
 
-        <RadioGroup
-            android:id="@+id/userTypeRadioGroup"
+        <EditText
+            android:id="@+id/conjuntoEditText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="10dp">
+            android:background="@android:drawable/editbox_background"
+            android:hint="Torre"
+            android:textSize="15sp" />
 
-            <RadioButton
-                android:id="@+id/visitanteRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Visitante"/>
+        <EditText
+            android:id="@+id/conjuntoEditText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Apto"
+            android:textSize="15sp" />
 
-            <RadioButton
-                android:id="@+id/residenteRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Residente"
-                android:layout_marginStart="20dp"/>
-        </RadioGroup>
+        <!-- Switch interactivo  -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Seleccione tipo de usuario:"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <android.widget.Switch
+            android:id="@+id/userTypeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+            android:textColor="@color/white"
+            android:textOff="Visitante"
+            android:textOn="Residente"
+            android:thumbTint="@color/azul_fondo"
+            android:trackTint="@color/naranja" />
 
         <Button
             android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crear Cuenta"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#ED4525"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"/>
+            android:text="Crear Cuenta"
+            android:textColor="@color/white" />
 
         <TextView
-            android:id="@+id/loginTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿Ya tienes cuenta? Inicia Sesión"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"/>
+            android:id="@+id/loginTextView1"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/login_text"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/terminos123"
+            android:layout_width="290dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
+            android:textAlignment="center"
+            android:textColor="#828282"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
