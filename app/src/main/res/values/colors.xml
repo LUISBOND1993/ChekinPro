@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="azul_fondo">#326789</color>
     <color name="naranja">#ED4525</color>
+    <color name="switch_track">#80FFFFFF</color> <!-- Color semitransparente para la pista -->
 
 </resources>
