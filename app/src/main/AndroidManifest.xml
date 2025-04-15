@@ -14,6 +14,12 @@
         android:theme="@style/Theme.ChekinPro"
         tools:targetApi="31">
         <activity
+            android:name=".FacturacionYCobroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfiguracionCuentaActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConfirmacionAjustes"
             android:exported="false" />
         <activity
@@ -25,9 +31,6 @@
         <activity
             android:name=".CambiarContrasenaActivity"
             android:exported="false" />
-        <activity
-            android:name=".FacturacionYCobroFragment"
-            android:exported="false" /> <!-- Registro de visitantes -->
         <activity
             android:name=".RegistroDeVisitantes"
             android:exported="false" /> <!-- Pre-registro -->
