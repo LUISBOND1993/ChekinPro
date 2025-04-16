@@ -1,23 +1,28 @@
 package com.example.chekinpro
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.activity.enableEdgeToEdge
-
 
 class FacturacionYCobroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_facturacion_ycobro)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById<LinearLayout>(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        // Flecha de retroceso que vuelve al menú
+        val flecha = findViewById<ImageView>(R.id.retroceso)
+        flecha.setOnClickListener {
+            val intent = Intent(this, Menu::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // Botón check que lleva a ConfirmacionCobroActivity
+        val botonCheck = findViewById<ImageView>(R.id.icono_check)
+        botonCheck.setOnClickListener {
+            val intent = Intent(this, ConfirmacionCobroActivity::class.java)
+            startActivity(intent)
         }
     }
 }
