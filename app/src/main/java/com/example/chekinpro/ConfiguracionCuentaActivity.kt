@@ -54,7 +54,7 @@ class ConfiguracionCuentaActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Si todo está correcto: mostrar pantalla de confirmación
+
             startActivity(Intent(this, ConfirmacionAjustes::class.java))
 
             // Después de 60 segundos, volver al menú
