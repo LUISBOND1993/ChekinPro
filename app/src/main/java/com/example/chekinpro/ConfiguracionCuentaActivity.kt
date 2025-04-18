@@ -4,8 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.Button
-import android.widget.ImageView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -30,22 +29,39 @@ class ConfiguracionCuentaActivity : AppCompatActivity() {
         }
 
         // Botón CAMBIAR CONTRASEÑA
-        val btnCambiarContrasena = findViewById<Button>(R.id.btn_cambiar_contraseña)
+        val btnCambiarContrasena = findViewById<Button>(R.id.btnCambiarContrasena)
         btnCambiarContrasena.setOnClickListener {
             startActivity(Intent(this, CambiarContrasenaActivity::class.java))
         }
 
-        // Botón GUARDAR CAMBIOS con delay hacia el menú
-        val btnGuardarCambios = findViewById<Button>(R.id.btnRegistrar)
+        // Campos a validar
+        val inputTelefono = findViewById<EditText>(R.id.inputTelefono)
+        val inputPlaca = findViewById<EditText>(R.id.inputPlaca)
+        val inputTorre = findViewById<EditText>(R.id.inputTorre)
+        val inputApto = findViewById<EditText>(R.id.inputApto)
+
+        // Botón GUARDAR CAMBIOS
+        val btnGuardarCambios = findViewById<Button>(R.id.btnGuardarCambios)
         btnGuardarCambios.setOnClickListener {
-            // Ir a pantalla de confirmación de ajustes
+            val telefono = inputTelefono.text.toString().trim()
+            val placa = inputPlaca.text.toString().trim()
+            val torre = inputTorre.text.toString().trim()
+            val apto = inputApto.text.toString().trim()
+
+            // Validación de campos obligatorios
+            if (telefono.isEmpty() || placa.isEmpty() || torre.isEmpty() || apto.isEmpty()) {
+                Toast.makeText(this, "Completa todos los campos antes de continuar", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Si todo está correcto: mostrar pantalla de confirmación
             startActivity(Intent(this, ConfirmacionAjustes::class.java))
 
-            // Delay para regresar al menú después de 60 segundos
+            // Después de 60 segundos, volver al menú
             Handler(Looper.getMainLooper()).postDelayed({
                 startActivity(Intent(this, Menu::class.java))
                 finish()
-            }, 60000) // 60 segundos = 60000 milisegundos
+            }, 60000)
         }
     }
 }
