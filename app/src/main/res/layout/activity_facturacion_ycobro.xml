@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/retroceso"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="Flecha de retroceso"
+        android:src="@drawable/flecha" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textFacturacionYCobro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Facturación y Cobro"
+        android:textColor="#FF000000"
+        android:textSize="18sp" />
+
+    <!-- Línea separadora -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#B0B0B0" />
+
+    <!-- Caja de fondo naranja -->
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="480dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/oval_background"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- LinearLayout para el "Visitante" -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ovalNombreConjunto"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:text="Nombre del conjunto:"
+                android:textColor="#FF000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ovalNombreConjuntoProto"
+                android:layout_width="107dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="70dp"
+                android:text="Portal el virrey"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- LinearLayout para la "Placa" -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ovalPlaca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Placa:"
+                android:textColor="#FF000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ovalNumeroPlaca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:text="RKL732"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- LinearLayout para "Fecha de Ingreso" -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ovalPuesto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="puesto:"
+                android:textColor="#FF000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ovalPuestoProto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:text="Puesto 30"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- LinearLayout para "Hora de Ingreso" -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ovalNombreResidente"
+                android:layout_width="77dp"
+                android:layout_height="wrap_content"
+                android:text="Nombre del residente:"
+                android:textColor="#FF000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ovalNombreResidenteProto"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:text="Ricardo Suarez Bonilla"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- LinearLayout para "Hora de Salida" -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ovalNombreVisitante"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Nombre del visitante:"
+                android:textColor="#FF000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ovalNombreVisitanteProto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:text="Carlos Sutachan"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- LinearLayout para "Duración" -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ovalIngreso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingreso:"
+                android:textColor="#FF000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ovalDuracionProto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:text="04-02-2025 17:40:00 p.m."
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- LinearLayout para "Cobro" -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ovalSalida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salida:"
+                android:textColor="#FF000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ovalSalidaProto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="75dp"
+                android:text="04-02-2025 01:40:00 p.m."
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ovalTotalCobro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Cobro:"
+                android:textColor="#FF000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ovalTotalCobroProto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="$3600"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/icono_check"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/check_circle"
+        android:contentDescription="Ícono de check"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Línea separadora debajo del ícono -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#B0B0B0" />
+
+
+</LinearLayout>

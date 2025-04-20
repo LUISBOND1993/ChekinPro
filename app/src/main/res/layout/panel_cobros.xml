@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <!-- Flecha de retroceso -->
+    <ImageView
+        android:id="@+id/retroceso"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Titulo -->
+    <TextView
+        android:id="@+id/textPanelCobros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center_vertical"
+        android:text="Panel de cobros"
+        android:textColor="#FF000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/retroceso"
+        app:layout_constraintTop_toBottomOf="@id/retroceso" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textPanelCobros">
+
+        <!-- Imagen de carga (carga.png) -->
+        <ImageView
+            android:id="@+id/imageCarga"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/aparcamiento" />
+
+        <!-- Texto de resultados -->
+        <TextView
+            android:id="@+id/textResultados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginEnd="16dp"
+            android:text="5 resultados"
+            android:textColor="#FF000000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPanelCobros" />
+    </LinearLayout>
+
+
+    <!-- Scroll Horizontal para los óvalos -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textPanelCobros">
+
+        <!-- LinearLayout con los óvalos -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <!-- Primer óvalo: Visita -->
+            <LinearLayout
+                android:layout_width="311dp"
+                android:layout_height="414dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/oval_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- LinearLayout para el "Visitante" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalVisita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visitante:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:text="Ricardo Suarez Bonilla"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para la "Placa" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalPlaca"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Placa:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalNumeroPlaca"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:text="RKL732"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Fecha de Ingreso" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalFechaIngreso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de Ingreso:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalFecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="24/01/2025"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Hora de Ingreso" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalHoraIngresoProto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora de Ingreso:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalHora"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:text="17:00 p.m."
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Hora de Salida" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalHoraSalida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora de Salida:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalHoraSalidaProto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="En curso"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Duración" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalDuracion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duración:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalDuracionProto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:text="1:40:00"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Cobro" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalCobro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cobro:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalCobroProto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:text="$3.600"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- Segundo óvalo: Fecha y Hora -->
+            <LinearLayout
+                android:layout_width="311dp"
+                android:layout_height="414dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/oval_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- LinearLayout para el "Visitante" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalVisita1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visitante:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalNombre1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:text="Ricardo Suarez Bonilla"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para la "Placa" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalPlaca1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Placa:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalNumeroPlacaProto1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:text="RKL732"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Fecha de Ingreso" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalFechaIngreso1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de Ingreso:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalFecha1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="18/03/2025"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Hora de Ingreso" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalHoraIngresoProto1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora de Ingreso:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalHora1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:text="12:00 p.m."
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Hora de Salida" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalHoraSalida1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora de Salida:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalHoraSalidaProto1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="16:00 p.m."
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Duración" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalDuracion1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duración:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalDuracionProto1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:text="4:00:00"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Cobro" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalCobro1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cobro:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalCobroProto1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:text="$5.600"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Tercer óvalo: Duración y Cobro -->
+            <LinearLayout
+                android:layout_width="311dp"
+                android:layout_height="414dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/oval_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- LinearLayout para el "Visitante" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalVisita2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visitante:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalNombre2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:text="Ricardo Suarez Bonilla"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para la "Placa" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalPlaca2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Placa:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalNumeroPlaca2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:text="RKL732"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Fecha de Ingreso" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalFechaIngreso2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de Ingreso:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalFecha2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="18/03/2025"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Hora de Ingreso" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalHoraIngresoProto2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora de Ingreso:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalHora2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:text="12:00 p.m."
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Hora de Salida" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalHoraSalida2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora de Salida:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalHoraSalidaProto2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="16:00 p.m."
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Duración" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalDuracion2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duración:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalDuracionProto2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:text="4:00:00"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- LinearLayout para "Cobro" -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ovalCobro2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cobro:"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ovalCobroProto2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:text="$5.600"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btnRegistrarSalida"
+        android:layout_width="239dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="550dp"
+        android:backgroundTint="#1C5F8F"
+        android:text="Registrar Salida"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textPanelCobros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

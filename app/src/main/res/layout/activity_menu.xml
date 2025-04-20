@@ -90,14 +90,19 @@
             android:padding="16dp">
 
             <LinearLayout
+                android:id="@+id/btnPreRegistro"
                 android:layout_width="259dp"
                 android:layout_height="49dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:layout_marginBottom="10dp"
-                android:padding="8dp">
+                android:padding="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
 
-                <ImageView
+
+            <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@drawable/pre_registro" />
@@ -114,6 +119,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnRegistroRapido"
                 android:layout_width="194dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -121,7 +127,8 @@
                 android:layout_marginBottom="10dp"
                 android:padding="8dp">
 
-                <ImageView
+
+            <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@drawable/qr" />
@@ -138,6 +145,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnHistorial"
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -145,7 +153,8 @@
                 android:layout_marginBottom="10dp"
                 android:padding="8dp">
 
-                <ImageView
+
+            <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@drawable/historial_de_transacciones" />
@@ -161,6 +170,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnPanelCobros"
                 android:layout_width="209dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -168,7 +178,8 @@
                 android:layout_marginBottom="10dp"
                 android:padding="8dp">
 
-                <ImageView
+
+            <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@drawable/automovil" />
@@ -183,13 +194,15 @@
                     android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/btnConfiguracion"
                 android:layout_width="249dp"
                 android:layout_height="41dp"
                 android:orientation="horizontal"
                 android:padding="8dp"
                 android:gravity="center_vertical">
 
-                <ImageView
+
+            <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@drawable/configuracion_cuenta" />

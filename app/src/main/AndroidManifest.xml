@@ -13,34 +13,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChekinPro"
         tools:targetApi="31">
-        <activity
-            android:name=".log_in"
-            android:exported="false" />
+
         <!-- Registro de visitantes -->
         <activity
             android:name=".RegistroDeVisitantes"
-            android:exported="false" /> <!-- Pre-registro -->
+            android:exported="false" />
+
+        <!-- Pre-registro -->
         <activity
             android:name=".PreRegistroDeVisitantes"
-            android:exported="false" /> <!-- Historial de visitas -->
+            android:exported="false" />
+
+        <!-- Historial de visitas -->
         <activity
             android:name=".HistorialDeVisitas"
-            android:exported="false" /> <!-- Menú principal -->
+            android:exported="false" />
+
+        <!-- Menú principal -->
         <activity
             android:name=".Menu"
-            android:exported="false" /> <!-- Registro/Inicio de sesión -->
+            android:exported="false" />
+
+        <!-- Registro/Inicio de sesión -->
         <activity
             android:name=".SignUp"
-            android:exported="false" /> <!-- Pantalla principal -->
+            android:exported="false" />
+
+        <!-- Pantalla principal -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>
+

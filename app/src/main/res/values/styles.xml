@@ -6,4 +6,11 @@
         <item name="android:textColor">#ED4525</item>
 
     </style>
+
+    <style name="infoStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
 </resources>
