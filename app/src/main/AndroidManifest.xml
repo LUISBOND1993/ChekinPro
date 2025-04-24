@@ -39,6 +39,12 @@
             android:name=".SignUp"
             android:exported="false" />
 
+        <!-- Login/Inicio de sesión -->
+        <activity
+            android:name=".Login"
+            android:exported="true" />
+
+
         <!-- Pantalla principal -->
         <activity
             android:name=".MainActivity"
