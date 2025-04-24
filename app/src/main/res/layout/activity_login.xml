@@ -1,164 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
 
-    <!-- Background image -->
+    <!-- Imagen de fondo en el encabezado -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_log"
+        android:background="@drawable/rounded_top"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/containerCard" />
 
     <!-- Logo -->
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="630dp"
-        android:layout_height="330dp"
-        android:background="@drawable/ellipse_background"
-        android:clipToOutline="true"
-        app:layout_constraintBottom_toBottomOf="@+id/logoImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686">>
-
-        <ImageView
-            android:id="@+id/backgroundImage"
-            android:layout_width="525dp"
-            android:layout_height="320dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_log"
-
-            />
-    </FrameLayout>
-
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="291dp"
-        android:layout_height="172dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="184dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- White rounded card (transparent CardView with internal white background) -->
-
-    <!-- Terms text anchored to the bottom -->
-
+    <!-- Card blanca redondeada inferior -->
     <androidx.cardview.widget.CardView
         android:id="@+id/containerCard"
-        android:layout_width="409dp"
-        android:layout_height="597dp"
+        android:layout_width="345dp"
+        android:layout_height="464dp"
+        android:layout_marginTop="-32dp"
+        android:elevation="16dp"
         app:cardBackgroundColor="@android:color/white"
-        app:cardElevation="12dp"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImage"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/logoImage">
 
 
-        <LinearLayout
-            android:layout_width="308dp"
-            android:layout_height="489dp"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_background"
-            android:elevation="28dp"
-            android:orientation="vertical"
-            android:padding="20dp">
-            <!-- Welcome text -->
-            <TextView
-                android:id="@+id/welcomeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Bienvenido:"
-                android:textColor="#000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
 
-            <!-- Email label and input -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Introduce tu email :"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/emailInput"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/edittext_background"
-                android:hint=" Email"
-                android:inputType="textEmailAddress" />
+                android:orientation="vertical"
+                android:padding="24dp">
 
-            <!-- Password label and input -->
+                <!-- Texto de Bienvenida -->
+                <TextView
+                    android:id="@+id/welcomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Bienvenido:"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Introduce tu contraseña :"
-                android:textSize="14sp" />
+                <!-- Label Email -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Introduce tu email :"
+                    android:textSize="14sp" />
 
-            <EditText
-                android:id="@+id/passwordInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Contraseña"
-                android:inputType="textPassword" />
+                <!-- Input Email -->
+                <EditText
+                    android:id="@+id/emailInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="email@domain.com"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="12dp" />
 
-            <!-- Forgot password -->
-            <TextView
-                android:id="@+id/forgotPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="34dp"
-                android:text="¿Olvidaste la contraseña?"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                <!-- Label Password -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Introduce tu contraseña :"
+                    android:textSize="14sp" />
 
-            <!-- Login button -->
-            <Button
-                android:id="@+id/loginButton2"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="#ED4525"
-                android:text="Log in"
-                android:textColor="#FFFFFF" />
+                <!-- Input Password -->
+                <EditText
+                    android:id="@+id/passwordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="12dp" />
 
-            <TextView
-                android:id="@+id/sign_up_login"
-                android:layout_width="match_parent"
-                android:layout_height="18dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="@string/login_text"
-                android:textAlignment="center"
-                android:textColor="#000000" />
+                <!-- ¿Olvidaste contraseña? -->
+                <TextView
+                    android:id="@+id/forgotPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"
+                    android:text="¿Olvidaste la contraseña?"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/terminos123"
-                android:layout_width="290dp"
-                android:layout_height="31dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
-                android:textAlignment="center"
-                android:textColor="#828282"
-                android:textSize="10sp"
-                tools:ignore="SmallSp" />
-        </LinearLayout>
+                <!-- Botón Login -->
+                <Button
+                    android:id="@+id/loginButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#ED4525"
+                    android:text="Log in"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
 
 
+                <!-- Términos y condiciones -->
+                <TextView
+                    android:id="@+id/terminos123"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
+                    android:textAlignment="center"
+                    android:textColor="#828282"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,5 +25,12 @@ class MainActivity : AppCompatActivity() {
             val intent= Intent(this, Login::class.java)
             startActivity(intent)
         }
+
+        val signupTextView = findViewById<TextView>(R.id.textView2)
+        signupTextView.setOnClickListener {
+            val intent = Intent(this, SignUp::class.java)
+            startActivity(intent)
+        }
+
     }
 }
