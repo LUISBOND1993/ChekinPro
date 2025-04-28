@@ -19,7 +19,7 @@
             android:name=".RegistroDeVisitantes"
             android:exported="false" />
 
-        <!-- Pre-registro -->
+        <!-- Pre-registro de visitantes -->
         <activity
             android:name=".PreRegistroDeVisitantes"
             android:exported="false" />
@@ -29,23 +29,60 @@
             android:name=".HistorialDeVisitas"
             android:exported="false" />
 
+        <!-- Item de visita -->
+        <activity
+            android:name=".ItemVisitaActivity"
+            android:exported="false" />
+
+        <!-- Facturación y cobro -->
+        <activity
+            android:name=".FacturacionYCobroActivity"
+            android:exported="false" />
+
+        <!-- Panel de cobros -->
+        <activity
+            android:name=".PanelCobrosActivity"
+            android:exported="false" />
+
+        <!-- Configuración de cuenta -->
+        <activity
+            android:name=".ConfiguracionCuentaActivity"
+            android:exported="false" />
+
+        <!-- Cambio de contraseña -->
+        <activity
+            android:name=".CambiarContrasenaActivity"
+            android:exported="false" />
+
+
+        <!-- Confirmaciones -->
+        <activity
+            android:name=".ConfirmacionAjustes"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmacionRegistroActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ConfirmacionCobroActivity"
+            android:exported="false" />
+
         <!-- Menú principal -->
         <activity
             android:name=".Menu"
             android:exported="false" />
 
-        <!-- Registro/Inicio de sesión -->
+        <!-- Registro / Sign Up -->
         <activity
             android:name=".SignUp"
             android:exported="false" />
 
-        <!-- Login/Inicio de sesión -->
+        <!-- Login / Inicio de sesión -->
         <activity
             android:name=".Login"
             android:exported="true" />
 
-
-        <!-- Pantalla principal -->
+        <!-- Pantalla principal (launcher) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -57,4 +94,3 @@
 
     </application>
 </manifest>
-

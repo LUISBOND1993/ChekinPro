@@ -39,10 +39,10 @@ class Menu : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Conexión del botón Panel de Cobros
+        // Conexión del botón Panel de Cobros (corregido aquí)
         val btnPanelCobros = findViewById<LinearLayout>(R.id.btnPanelCobros)
         btnPanelCobros.setOnClickListener {
-            val intent = Intent(this, FacturacionYCobroActivity::class.java)
+            val intent = Intent(this, PanelCobrosActivity::class.java)
             startActivity(intent)
         }
 
@@ -54,9 +54,3 @@ class Menu : AppCompatActivity() {
         }
     }
 }
-
-
-
-
-
-

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HistorialDeVisitas"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context=".HistorialDeVisitas">
 
     <!-- Flecha de regreso -->
     <ImageView
@@ -23,135 +22,150 @@
     <!-- Título -->
     <TextView
         android:id="@+id/titulo"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
         android:text="Historial de Visitas y Cobros"
-        android:textStyle="bold"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Línea delgada -->
     <View
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="12dp"
         android:background="#000"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
     <!-- Subtítulo -->
     <TextView
         android:id="@+id/subtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seleccione Fecha:"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="20dp"
+        android:text="Seleccione Fecha:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
     <!-- Scroll horizontal para los meses -->
     <HorizontalScrollView
         android:id="@+id/scrollMeses"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:overScrollMode="never"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@+id/subtitulo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/subtitulo">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:gravity="center_vertical">
+            android:paddingEnd="16dp">
 
             <!-- Meses ejemplo -->
-            <TextView android:text="Enero" style="@style/MesItem"/>
-            <TextView android:text="Febrero" style="@style/MesItem"/>
-            <TextView android:text="Marzo" style="@style/MesItem" android:textStyle="bold" android:textColor="#ED4525"/>
-            <TextView android:text="Abril" style="@style/MesItem"/>
-            <TextView android:text="Mayo" style="@style/MesItem"/>
-            <!-- Puedes agregar más -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MesItem"
+                android:text="Enero" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MesItem"
+                android:text="Febrero" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MesItem"
+                android:text="Marzo"
+                android:textColor="#ED4525"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MesItem"
+                android:text="Abril" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MesItem"
+                android:text="Mayo" />
 
         </LinearLayout>
+
     </HorizontalScrollView>
 
     <!-- CardView para calendario -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardCalendario"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_marginTop="80dp"
+        app:cardBackgroundColor="#ED4525"
         app:cardCornerRadius="32dp"
         app:cardElevation="4dp"
-        app:cardBackgroundColor="#ED4525"
-        app:layout_constraintTop_toBottomOf="@id/scrollMeses"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/scrollMeses">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!-- Aquí iría tu calendario -->
+            <!-- Calendario -->
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@android:color/transparent"/>
-
-            <!-- Logo dentro del calendario -->
-            <ImageView
-                android:id="@+id/logoEnCalendario"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_marginBottom="1dp"
-                android:layout_marginEnd="32dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/logo_2"/>
+                android:background="@android:color/transparent" />
         </FrameLayout>
     </androidx.cardview.widget.CardView>
 
     <!-- Línea inferior -->
     <View
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
         android:background="#000"
-        app:layout_constraintTop_toBottomOf="@id/cardCalendario"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/cardCalendario" />
 
     <!-- Botón Filtrar -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnFiltrar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="80dp"
+        android:layout_marginEnd="24dp"
         android:text="Filtrar"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:backgroundTint="#ED4525"
         app:cornerRadius="32dp"
-        app:layout_constraintTop_toBottomOf="@id/cardCalendario"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardCalendario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

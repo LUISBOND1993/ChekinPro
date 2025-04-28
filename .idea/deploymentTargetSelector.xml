@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-04-10T08:15:11.875466600Z">
+        <DropdownSelection timestamp="2025-04-26T16:16:38.793584400Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=RF8R20FM53E" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=RFCX80DAL9Z" />
             </handle>
           </Target>
         </DropdownSelection>
@@ -25,12 +25,6 @@
             </Target>
           </targets>
         </DialogSelection>
-      </SelectionState>
-      <SelectionState runConfigName="Login">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="Login (1)">
-        <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
   </component>

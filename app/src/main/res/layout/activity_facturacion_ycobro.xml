@@ -4,261 +4,271 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Flecha de regreso -->
     <ImageView
         android:id="@+id/retroceso"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="start"
-        android:layout_marginBottom="8dp"
+        android:src="@drawable/flecha"
         android:contentDescription="Flecha de retroceso"
-        android:src="@drawable/flecha" />
+        android:layout_marginBottom="8dp" />
 
     <!-- Título -->
     <TextView
         android:id="@+id/textFacturacionYCobro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="Facturación y Cobro"
-        android:textColor="#FF000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"/>
 
     <!-- Línea separadora -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="20dp"
-        android:background="#B0B0B0" />
+        android:background="#B0B0B0"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Caja de fondo naranja -->
+    <!-- Tarjeta de información -->
     <LinearLayout
-        android:layout_width="326dp"
-        android:layout_height="480dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="13dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/oval_background"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp">
 
-        <!-- LinearLayout para el "Visitante" -->
+        <!-- Cada fila: Título + Dato -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="12dp">
 
             <TextView
-                android:id="@+id/ovalNombreConjunto"
-                android:layout_width="75dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Nombre del conjunto:"
-                android:textColor="#FF000000"
-                android:textSize="14sp" />
+                android:textColor="#000"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/ovalNombreConjuntoProto"
-                android:layout_width="107dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="70dp"
-                android:text="Portal el virrey"
-                android:textColor="#FFFFFFFF"
-                android:textSize="14sp" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Portal el Virrey"
+                android:textColor="#FFF"
+                android:textSize="14sp"/>
         </LinearLayout>
 
-        <!-- LinearLayout para la "Placa" -->
+        <!-- Placa -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="12dp">
 
             <TextView
-                android:id="@+id/ovalPlaca"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Placa:"
-                android:textColor="#FF000000"
-                android:textSize="14sp" />
+                android:textColor="#000"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/ovalNumeroPlaca"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="110dp"
+                android:layout_weight="1"
                 android:text="RKL732"
-                android:textColor="#FFFFFFFF"
-                android:textSize="14sp" />
+                android:textColor="#FFF"
+                android:textSize="14sp"/>
         </LinearLayout>
 
-        <!-- LinearLayout para "Fecha de Ingreso" -->
+        <!-- Puesto -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="12dp">
 
             <TextView
-                android:id="@+id/ovalPuesto"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="puesto:"
-                android:textColor="#FF000000"
-                android:textSize="14sp" />
+                android:layout_weight="1"
+                android:text="Puesto:"
+                android:textColor="#000"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/ovalPuestoProto"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
+                android:layout_weight="1"
                 android:text="Puesto 30"
-                android:textColor="#FFFFFFFF"
-                android:textSize="14sp" />
+                android:textColor="#FFF"
+                android:textSize="14sp"/>
         </LinearLayout>
 
-        <!-- LinearLayout para "Hora de Ingreso" -->
+        <!-- Nombre del residente -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="12dp">
 
             <TextView
-                android:id="@+id/ovalNombreResidente"
-                android:layout_width="77dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Nombre del residente:"
-                android:textColor="#FF000000"
-                android:textSize="14sp" />
+                android:textColor="#000"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/ovalNombreResidenteProto"
-                android:layout_width="112dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
+                android:layout_weight="1"
                 android:text="Ricardo Suarez Bonilla"
-                android:textColor="#FFFFFFFF"
-                android:textSize="14sp" />
+                android:textColor="#FFF"
+                android:textSize="14sp"/>
         </LinearLayout>
 
-        <!-- LinearLayout para "Hora de Salida" -->
+        <!-- Nombre del visitante -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="12dp">
 
             <TextView
-                android:id="@+id/ovalNombreVisitante"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Nombre del visitante:"
-                android:textColor="#FF000000"
-                android:textSize="14sp" />
+                android:textColor="#000"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/ovalNombreVisitanteProto"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
+                android:layout_weight="1"
                 android:text="Carlos Sutachan"
-                android:textColor="#FFFFFFFF"
-                android:textSize="14sp" />
+                android:textColor="#FFF"
+                android:textSize="14sp"/>
         </LinearLayout>
 
-        <!-- LinearLayout para "Duración" -->
+        <!-- Ingreso -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ingreso:"
+                android:textColor="#000"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/ovalIngreso"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Ingreso:"
-                android:textColor="#FF000000"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/ovalDuracionProto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
+                android:layout_weight="1"
                 android:text="04-02-2025 17:40:00 p.m."
-                android:textColor="#FFFFFFFF"
-                android:textSize="14sp" />
+                android:textColor="#FFF"
+                android:textSize="14sp"/>
         </LinearLayout>
 
-        <!-- LinearLayout para "Cobro" -->
+        <!-- Salida -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="12dp">
 
             <TextView
-                android:id="@+id/ovalSalida"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Salida:"
-                android:textColor="#FF000000"
-                android:textSize="14sp" />
+                android:textColor="#000"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/ovalSalidaProto"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="75dp"
-                android:text="04-02-2025 01:40:00 p.m."
-                android:textColor="#FFFFFFFF"
-                android:textSize="14sp" />
+                android:layout_weight="1"
+                android:text="04-02-2025 19:00:00 p.m."
+                android:textColor="#FFF"
+                android:textSize="14sp"/>
         </LinearLayout>
 
+        <!-- Total Cobro -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="16dp">
 
             <TextView
-                android:id="@+id/ovalTotalCobro"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Total Cobro:"
-                android:textColor="#FF000000"
-                android:textSize="20sp" />
+                android:textColor="#000"
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/ovalTotalCobroProto"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
+                android:layout_weight="1"
                 android:text="$3600"
-                android:textColor="#FFFFFFFF"
-                android:textSize="20sp" />
+                android:textColor="#FFF"
+                android:textSize="20sp"/>
         </LinearLayout>
     </LinearLayout>
+
+    <!-- Icono de Check -->
     <ImageView
         android:id="@+id/icono_check"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/check_circle"
-        android:contentDescription="Ícono de check"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="24dp"
+        android:contentDescription="Ícono check de confirmación" />
 
-    <!-- Línea separadora debajo del ícono -->
+    <!-- Línea separadora inferior -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:background="#B0B0B0" />
-
 
 </LinearLayout>
