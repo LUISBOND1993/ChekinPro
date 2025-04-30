@@ -14,75 +14,7 @@
         android:theme="@style/Theme.ChekinPro"
         tools:targetApi="31">
 
-        <!-- Registro de visitantes -->
-        <activity
-            android:name=".RegistroDeVisitantes"
-            android:exported="false" />
-
-        <!-- Pre-registro de visitantes -->
-        <activity
-            android:name=".PreRegistroDeVisitantes"
-            android:exported="false" />
-
-        <!-- Historial de visitas -->
-        <activity
-            android:name=".HistorialDeVisitas"
-            android:exported="false" />
-
-        <!-- Item de visita -->
-        <activity
-            android:name=".ItemVisitaActivity"
-            android:exported="false" />
-
-        <!-- Facturación y cobro -->
-        <activity
-            android:name=".FacturacionYCobroActivity"
-            android:exported="false" />
-
-        <!-- Panel de cobros -->
-        <activity
-            android:name=".PanelCobrosActivity"
-            android:exported="false" />
-
-        <!-- Configuración de cuenta -->
-        <activity
-            android:name=".ConfiguracionCuentaActivity"
-            android:exported="false" />
-
-        <!-- Cambio de contraseña -->
-        <activity
-            android:name=".CambiarContrasenaActivity"
-            android:exported="false" />
-
-
-        <!-- Confirmaciones -->
-        <activity
-            android:name=".ConfirmacionAjustes"
-            android:exported="false" />
-        <activity
-            android:name=".ConfirmacionRegistroActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".ConfirmacionCobroActivity"
-            android:exported="false" />
-
-        <!-- Menú principal -->
-        <activity
-            android:name=".Menu"
-            android:exported="false" />
-
-        <!-- Registro / Sign Up -->
-        <activity
-            android:name=".SignUp"
-            android:exported="false" />
-
-        <!-- Login / Inicio de sesión -->
-        <activity
-            android:name=".Login"
-            android:exported="false" />
-
-        <!-- Pantalla principal (launcher) -->
+        <!-- Actividad principal (pantalla de bienvenida con logo) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -91,6 +23,72 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Login -->
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+
+        <!-- Registro (SignUp) -->
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+
+        <!-- Menú principal -->
+        <activity
+            android:name=".Menu"
+            android:exported="false" />
+
+        <!-- Confirmaciones -->
+        <activity
+            android:name=".ConfirmacionAjustes"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmacionRegistroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmacionCobroActivity"
+            android:exported="false" />
+
+        <!-- Cambio de contraseña -->
+        <activity
+            android:name=".CambiarContrasenaActivity"
+            android:exported="false" />
+
+        <!-- Configuración de cuenta -->
+        <activity
+            android:name=".ConfiguracionCuentaActivity"
+            android:exported="false" />
+
+        <!-- Panel de cobros -->
+        <activity
+            android:name=".PanelCobrosActivity"
+            android:exported="false" />
+
+        <!-- Facturación y cobro -->
+        <activity
+            android:name=".FacturacionYCobroActivity"
+            android:exported="false" />
+
+        <!-- Item de visita -->
+        <activity
+            android:name=".ItemVisitaActivity"
+            android:exported="false" />
+
+        <!-- Historial de visitas -->
+        <activity
+            android:name=".HistorialDeVisitas"
+            android:exported="false" />
+
+        <!-- Pre-registro de visitantes -->
+        <activity
+            android:name=".PreRegistroDeVisitantes"
+            android:exported="false" />
+
+        <!-- Registro de visitantes -->
+        <activity
+            android:name=".RegistroDeVisitantes"
+            android:exported="false" />
 
     </application>
 </manifest>
