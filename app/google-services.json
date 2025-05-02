@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "859728166859",
+    "project_id": "chekinpro-ef3e0",
+    "storage_bucket": "chekinpro-ef3e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859728166859:android:96a69642340fdd2e97004e",
+        "android_client_info": {
+          "package_name": "com.example.chekinpro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlaeMaIwcaP-glX46CJz1wF2Bsz54gnLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

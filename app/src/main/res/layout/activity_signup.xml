@@ -10,26 +10,28 @@
     <!-- Imagen de fondo tipo cabecera -->
     <ImageView
         android:id="@+id/footerImage"
-        android:layout_width="416dp"
-        android:layout_height="409dp"
+        android:layout_width="395dp"
+        android:layout_height="383dp"
         android:background="@drawable/rounded_top"
         android:clipToOutline="true"
+        android:contentDescription="Cabecera inferior decorativa"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_sign_up"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="140dp"
-        android:layout_height="155dp"
+        android:layout_width="141dp"
+        android:layout_height="129dp"
         android:layout_marginStart="63dp"
         android:layout_marginEnd="63dp"
-        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo_blanco" />
 
     <!-- Scroll de contenido -->
@@ -37,14 +39,14 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintTop_toBottomOf="@id/footerImage"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/formContainer"
-        android:layout_width="320dp"
-        android:layout_height="664dp"
+        android:layout_width="331dp"
+        android:layout_height="643dp"
         android:layout_marginHorizontal="24dp"
         android:background="@drawable/rounded_background"
         android:elevation="8dp"
@@ -61,7 +63,7 @@
             android:layout_marginBottom="10dp"
             android:text="Registro:"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <EditText
@@ -71,6 +73,7 @@
             android:background="@android:drawable/editbox_background"
             android:hint="Email"
             android:inputType="textEmailAddress"
+            android:minHeight="48dp"
             android:textSize="15sp" />
 
         <EditText
@@ -80,6 +83,7 @@
             android:background="@android:drawable/editbox_background"
             android:hint="Contraseña"
             android:inputType="textPassword"
+            android:minHeight="48dp"
             android:textSize="15sp" />
 
         <EditText
@@ -89,6 +93,7 @@
             android:background="@android:drawable/editbox_background"
             android:hint="Teléfono"
             android:inputType="phone"
+            android:minHeight="48dp"
             android:textSize="15sp" />
 
         <EditText
@@ -97,6 +102,7 @@
             android:layout_height="wrap_content"
             android:background="@android:drawable/editbox_background"
             android:hint="Placa"
+            android:minHeight="48dp"
             android:textSize="15sp" />
 
         <EditText
@@ -105,6 +111,7 @@
             android:layout_height="wrap_content"
             android:background="@android:drawable/editbox_background"
             android:hint="Conjunto"
+            android:minHeight="48dp"
             android:textSize="15sp" />
 
         <EditText
@@ -113,6 +120,7 @@
             android:layout_height="wrap_content"
             android:background="@android:drawable/editbox_background"
             android:hint="Torre"
+            android:minHeight="48dp"
             android:textSize="15sp" />
 
         <EditText
@@ -121,7 +129,9 @@
             android:layout_height="wrap_content"
             android:background="@android:drawable/editbox_background"
             android:hint="Apto"
+            android:minHeight="48dp"
             android:textSize="15sp" />
+
 
         <!-- Switch interactivo  -->
         <!-- Selector: Etiqueta -->
@@ -138,25 +148,27 @@
             android:id="@+id/userTypeGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="8dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/visitorRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Visitante"
                 android:buttonTint="@color/naranja"
+                android:minHeight="48dp"
+                android:text="Visitante"
                 android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/residentRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Residente"
                 android:layout_marginStart="24dp"
                 android:buttonTint="@color/naranja"
+                android:minHeight="48dp"
+                android:text="Residente"
                 android:textColor="@color/black" />
         </RadioGroup>
 
