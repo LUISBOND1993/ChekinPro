@@ -8,7 +8,7 @@
     android:background="@drawable/bg_image"
     tools:context=".MainActivity">
 
-    <!-- Capa negra con transparencia -->
+    <!-- Capa negra transparente -->
     <View
         android:id="@+id/darkOverlay"
         android:layout_width="0dp"
@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Logo -->
+    <!-- Logo CheckinPro -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="250dp"
@@ -28,24 +28,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo_proyecto" />
+        app:srcCompat="@drawable/logo_proyecto"
+        android:scaleType="centerCrop" />
 
-    <!-- Eslogan -->
+    <!-- Eslogan blanco superpuesto (tapa el eslogan naranja del logo) -->
+
+    <!-- Botón Login -->
     <TextView
         android:id="@+id/eslogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="184dp"
         android:fontFamily="@font/fuente"
         android:text="“Control Inteligente, Acceso Fácil”"
-        android:textColor="#f3eef2"
-        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView" />
 
-    <!-- Botón Login -->
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
@@ -56,11 +59,11 @@
         android:backgroundTint="#ED4525"
         android:text="Login"
         android:textColor="#f3eef2"
-        app:layout_constraintTop_toBottomOf="@id/eslogan"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Texto: ¿No tienes una cuenta? -->
+    <!-- ¿No tienes una cuenta? -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -75,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Texto: Regístrate -->
+    <!-- Regístrate -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
