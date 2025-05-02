@@ -61,7 +61,7 @@ class ConfiguracionCuentaActivity : AppCompatActivity() {
             Handler(Looper.getMainLooper()).postDelayed({
                 startActivity(Intent(this, Menu::class.java))
                 finish()
-            }, 60000)
+            }, 5000)
         }
     }
 }

@@ -93,8 +93,7 @@ class SignUp : AppCompatActivity() {
                                 startActivity(intent)
                                 finish()
                             }, 2000)
-                            startActivity(Intent(this, Login::class.java))
-                            finish()
+
                         }
                         .addOnFailureListener {
                             Toast.makeText(this, "Error guardando datos", Toast.LENGTH_SHORT).show()
