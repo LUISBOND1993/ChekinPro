@@ -19,7 +19,7 @@ class SignUp : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_signup)
 
-        // Inicializar Firebase
+        // Inicializar Firebase//
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
@@ -93,8 +93,7 @@ class SignUp : AppCompatActivity() {
                                 startActivity(intent)
                                 finish()
                             }, 2000)
-                            startActivity(Intent(this, Login::class.java))
-                            finish()
+
                         }
                         .addOnFailureListener {
                             Toast.makeText(this, "Error guardando datos", Toast.LENGTH_SHORT).show()

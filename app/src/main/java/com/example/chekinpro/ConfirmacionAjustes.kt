@@ -26,6 +26,6 @@ class ConfirmacionAjustes : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()
-        }, 60000) // 1 minuto en milisegundos
+        }, 5000) // 1 minuto en milisegundos
     }
 }
