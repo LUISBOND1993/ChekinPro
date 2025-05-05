@@ -17,6 +17,6 @@ class ConfirmacionRegistroActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()
-        }, 60000) // 60000 milisegundos = 1 minuto
+        }, 5000)
     }
 }
