@@ -2,13 +2,10 @@ package com.example.chekinpro
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.database.FirebaseDatabase
 
 class PreRegistroDeVisitantes : AppCompatActivity() {
@@ -19,19 +16,13 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
     private lateinit var placa: EditText
     private lateinit var torre: EditText
     private lateinit var apto: EditText
-    private lateinit var btnRegistrar: Button
+    private lateinit var btnRegistrar: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_pre_registro_de_visitantes)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
+        // Enlazar vistas
         nombre = findViewById(R.id.editTextNombre)
         documento = findViewById(R.id.editTextDocumento)
         telefono = findViewById(R.id.editTextTelefono)
@@ -41,6 +32,8 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
         btnRegistrar = findViewById(R.id.btnRegistrar)
 
         btnRegistrar.setOnClickListener {
+            Toast.makeText(this, "Click detectado", Toast.LENGTH_SHORT).show()
+
             val nombreVal = nombre.text.toString().trim()
             val documentoVal = documento.text.toString().trim()
             val telefonoVal = telefono.text.toString().trim()
@@ -68,7 +61,6 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
                     ref.child(id).setValue(visitante).addOnSuccessListener {
                         Toast.makeText(this, "Visitante registrado correctamente", Toast.LENGTH_SHORT).show()
 
-                        // Limpiar campos
                         nombre.text.clear()
                         documento.text.clear()
                         telefono.text.clear()
