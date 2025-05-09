@@ -9,10 +9,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.FirebaseDatabase
 
 class PreRegistroDeVisitantes : AppCompatActivity() {
 
-    // Declaración de campos
     private lateinit var nombre: EditText
     private lateinit var documento: EditText
     private lateinit var telefono: EditText
@@ -32,7 +32,6 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
             insets
         }
 
-        // Conexión de los elementos del formulario
         nombre = findViewById(R.id.editTextNombre)
         documento = findViewById(R.id.editTextDocumento)
         telefono = findViewById(R.id.editTextTelefono)
@@ -41,7 +40,6 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
         apto = findViewById(R.id.editTextApto)
         btnRegistrar = findViewById(R.id.btnRegistrar)
 
-        // Lógica del botón
         btnRegistrar.setOnClickListener {
             val nombreVal = nombre.text.toString().trim()
             val documentoVal = documento.text.toString().trim()
@@ -50,15 +48,51 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
             val torreVal = torre.text.toString().trim()
             val aptoVal = apto.text.toString().trim()
 
-            // Validación simple de campos obligatorios
             if (nombreVal.isEmpty() || documentoVal.isEmpty() || telefonoVal.isEmpty()) {
                 Toast.makeText(this, "Por favor, completa todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
             } else {
-                // Aquí más adelante se podrá enviar a Firebase
-                val intent = Intent(this, ConfirmacionRegistroActivity::class.java)
-                startActivity(intent)
+                val visitante = Visitante(
+                    nombre = nombreVal,
+                    documento = documentoVal,
+                    telefono = telefonoVal,
+                    placa = placaVal,
+                    torre = torreVal,
+                    apto = aptoVal
+                )
+
+                val db = FirebaseDatabase.getInstance()
+                val ref = db.getReference("visitantes")
+                val id = ref.push().key
+
+                if (id != null) {
+                    ref.child(id).setValue(visitante).addOnSuccessListener {
+                        Toast.makeText(this, "Visitante registrado correctamente", Toast.LENGTH_SHORT).show()
+
+                        // Limpiar campos
+                        nombre.text.clear()
+                        documento.text.clear()
+                        telefono.text.clear()
+                        placa.text.clear()
+                        torre.text.clear()
+                        apto.text.clear()
+
+                        val intent = Intent(this, ConfirmacionRegistroActivity::class.java)
+                        startActivity(intent)
+                    }.addOnFailureListener {
+                        Toast.makeText(this, "Error al registrar en Firebase", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
     }
 }
 
+// Modelo interno
+data class Visitante(
+    val nombre: String = "",
+    val documento: String = "",
+    val telefono: String = "",
+    val placa: String = "",
+    val torre: String = "",
+    val apto: String = ""
+)
