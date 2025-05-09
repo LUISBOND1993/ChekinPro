@@ -61,7 +61,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="672dp"
             android:orientation="vertical"
             android:padding="24dp">
 
@@ -137,6 +137,23 @@
                 android:background="@drawable/edittext_background"
                 android:hint="40025302"
                 android:padding="12dp"
+                android:textColorHint="#999999" />
+            <!-- Placa -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Placa :" />
+
+            <EditText
+                android:id="@+id/inputPlaca"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/edittext_background"
+                android:hint="ABC123"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textAllCaps="true"
                 android:textColorHint="#999999" />
 
             <!-- Conjunto -->

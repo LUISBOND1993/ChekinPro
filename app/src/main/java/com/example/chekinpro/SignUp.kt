@@ -19,7 +19,7 @@ class SignUp : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_signup)
 
-        // Inicializar Firebase//
+        // Inicializar Firebase
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 

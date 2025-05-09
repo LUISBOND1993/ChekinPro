@@ -6,8 +6,10 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegistroDeVisitantes : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_de_visitantes)
@@ -19,6 +21,9 @@ class RegistroDeVisitantes : AppCompatActivity() {
             insets
         }
 
+        // Inicializar Firestore
+        val db = FirebaseFirestore.getInstance()
+
         // Flecha para regresar al menú
         val flechaAtras = findViewById<ImageView>(R.id.flechaAtras)
         flechaAtras.setOnClickListener {
@@ -27,18 +32,16 @@ class RegistroDeVisitantes : AppCompatActivity() {
             finish()
         }
 
-        // Checkbox de autorización
-        val checkAutorizacion = findViewById<CheckBox>(R.id.checkAutorizacion)
-
-        // Campos obligatorios
+        // Referencias UI
         val campoNombre = findViewById<EditText>(R.id.inputNombre)
         val campoCC = findViewById<EditText>(R.id.inputCC)
         val campoTorre = findViewById<EditText>(R.id.inputTorre)
         val campoApto = findViewById<EditText>(R.id.inputApto)
         val campoConjunto = findViewById<EditText>(R.id.inputConjunto)
-
-        // Botón registrar
+        val checkAutorizacion = findViewById<CheckBox>(R.id.checkAutorizacion)
         val btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
+
+        // Acción del botón registrar
         btnRegistrar.setOnClickListener {
             val nombre = campoNombre.text.toString().trim()
             val cc = campoCC.text.toString().trim()
@@ -57,15 +60,27 @@ class RegistroDeVisitantes : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Si todo está bien, ir a pantalla de confirmación
-            val intent = Intent(this, ConfirmacionRegistroActivity::class.java)
-            startActivity(intent)
-            finish()
+            val visitanteData = hashMapOf(
+                "nombre" to nombre,
+                "cedula" to cc,
+                "torre" to torre,
+                "apartamento" to apto,
+                "conjunto" to conjunto,
+                "tipoUsuario" to "Visitante",
+                "fechaRegistro" to System.currentTimeMillis()
+            )
+
+            db.collection("visitante_rapido")
+                .add(visitanteData)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Visitante registrado correctamente", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, ConfirmacionRegistroActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Error al registrar: ${e.message}", Toast.LENGTH_LONG).show()
+                }
         }
     }
 }
-
-
-
-
-
