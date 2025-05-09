@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistroDeVisitantes">
+
     <!-- Imagen del fondo -->
     <FrameLayout
         android:id="@+id/fondoInferior"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="280dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -45,166 +47,147 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- CardView formulario -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardFormulario"
+    <!-- ScrollView que envuelve todo el formulario -->
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="32dp"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/flechaAtras"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/flechaAtras">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFormulario"
             android:layout_width="match_parent"
-            android:layout_height="672dp"
-            android:orientation="vertical"
-            android:padding="24dp">
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:paddingBottom="8dp"
-                android:text="Registro Visitante:"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!-- Nombre -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre Visitante :" />
-
-            <EditText
-                android:id="@+id/inputNombre"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Jaime Camacho Herrera"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-
-            <!-- Torre -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Torre :" />
-
-            <EditText
-                android:id="@+id/inputTorre"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Torre"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-
-            <!-- Apartamento -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Apartamento :" />
-
-            <EditText
-                android:id="@+id/inputApto"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Apartamento"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-
-            <!-- C.C -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C.C :" />
-
-            <EditText
-                android:id="@+id/inputCC"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="40025302"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-            <!-- Placa -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Placa :" />
-
-            <EditText
-                android:id="@+id/inputPlaca"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="ABC123"
-                android:inputType="text"
-                android:padding="12dp"
-                android:textAllCaps="true"
-                android:textColorHint="#999999" />
-
-            <!-- Conjunto -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Conjunto" />
-
-            <EditText
-                android:id="@+id/inputConjunto"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Conjunto"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-
-            <!-- Checkbox -->
-            <CheckBox
-                android:id="@+id/checkAutorizacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Autorizas el  Tratamiento de  Datos Personales"
-                android:textColor="#000000"
-                android:textSize="12sp" />
-
-            <!-- Botón registrar -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRegistrar"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:text="Registrar"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                app:backgroundTint="#ED4525"
-                app:cornerRadius="32dp" />
-
-            <!-- Texto de términos -->
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
-                android:textColor="#888888"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical"
+                android:padding="24dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="8dp"
+                    android:text="Registro Visitante:"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Nombre -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nombre Visitante :" />
+                <EditText
+                    android:id="@+id/inputNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Jaime Camacho Herrera"
+                    android:padding="12dp"
+                    android:textColorHint="#999999" />
+
+                <!-- Torre -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Torre :" />
+                <EditText
+                    android:id="@+id/inputTorre"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Torre"
+                    android:padding="12dp"
+                    android:textColorHint="#999999" />
+
+                <!-- Apartamento -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Apartamento :" />
+                <EditText
+                    android:id="@+id/inputApto"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Apartamento"
+                    android:padding="12dp"
+                    android:textColorHint="#999999" />
+
+                <!-- C.C -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="C.C :" />
+                <EditText
+                    android:id="@+id/inputCC"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="40025302"
+                    android:padding="12dp"
+                    android:textColorHint="#999999" />
+
+                <!-- Placa -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Placa :" />
+                <EditText
+                    android:id="@+id/inputPlaca"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="ABC123"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textAllCaps="true"
+                    android:textColorHint="#999999" />
+
+                <!-- Conjunto -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Conjunto" />
+                <EditText
+                    android:id="@+id/inputConjunto"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Conjunto"
+                    android:padding="12dp"
+                    android:textColorHint="#999999" />
+
+                <!-- Checkbox -->
+                <CheckBox
+                    android:id="@+id/checkAutorizacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Autorizas el  Tratamiento de  Datos Personales"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <!-- Botón registrar -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Registrar"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    app:backgroundTint="#ED4525"
+                    app:cornerRadius="32dp" />
+
+                <!-- Texto de términos -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
+                    android:textColor="#888888"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
