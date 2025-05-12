@@ -38,53 +38,64 @@ class ConfiguracionCuentaActivity : AppCompatActivity() {
         val inputPlaca = findViewById<EditText>(R.id.inputPlaca)
         val inputTorre = findViewById<EditText>(R.id.inputTorre)
         val inputApto = findViewById<EditText>(R.id.inputApto)
+        inputEmail.isEnabled = false  // Bloqueamos edición del email
+
+        val user = FirebaseAuth.getInstance().currentUser
+        val db = FirebaseFirestore.getInstance()
+
+        // Cargar datos actuales del usuario
+        if (user != null) {
+            db.collection("usuarios").document(user.uid).get()
+                .addOnSuccessListener { document ->
+                    if (document != null && document.exists()) {
+                        inputEmail.setText(user.email)
+                        inputTelefono.setText(document.getString("telefono") ?: "")
+                        inputPlaca.setText(document.getString("placa") ?: "")
+                        inputTorre.setText(document.getString("torre") ?: "")
+                        inputApto.setText(document.getString("apto") ?: "")
+                    }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Error al cargar datos", Toast.LENGTH_SHORT).show()
+                }
+        }
 
         val btnGuardarCambios = findViewById<Button>(R.id.btnGuardarCambios)
         btnGuardarCambios.setOnClickListener {
-            val nuevoEmail = inputEmail.text.toString().trim()
             val telefono = inputTelefono.text.toString().trim()
             val placa = inputPlaca.text.toString().trim()
             val torre = inputTorre.text.toString().trim()
             val apto = inputApto.text.toString().trim()
 
-            if (nuevoEmail.isEmpty() || telefono.isEmpty() || placa.isEmpty() || torre.isEmpty() || apto.isEmpty()) {
+            if (telefono.isEmpty() || placa.isEmpty() || torre.isEmpty() || apto.isEmpty()) {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val user = FirebaseAuth.getInstance().currentUser
             if (user == null) {
                 Toast.makeText(this, "Usuario no autenticado", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            user.verifyBeforeUpdateEmail(nuevoEmail)
-                .addOnSuccessListener {
-                    val db = FirebaseFirestore.getInstance()
-                    val datosActualizados = mapOf(
-                        "email" to nuevoEmail,
-                        "telefono" to telefono,
-                        "placa" to placa,
-                        "torre" to torre,
-                        "apto" to apto
-                    )
+            val datosActualizados = mapOf(
+                "telefono" to telefono,
+                "placa" to placa,
+                "torre" to torre,
+                "apto" to apto
+            )
 
-                    db.collection("usuarios").document(user.uid)
-                        .update(datosActualizados)
-                        .addOnSuccessListener {
-                            Toast.makeText(this, "Cambios guardados correctamente", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, ConfirmacionAjustes::class.java))
-                            Handler(Looper.getMainLooper()).postDelayed({
-                                startActivity(Intent(this, Menu::class.java))
-                                finish()
-                            }, 5000)
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(this, "Error al guardar cambios", Toast.LENGTH_SHORT).show()
-                        }
+            db.collection("usuarios").document(user.uid)
+                .update(datosActualizados)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Cambios guardados correctamente", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, ConfirmacionAjustes::class.java))
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        startActivity(Intent(this, Menu::class.java))
+                        finish()
+                    }, 5000)
                 }
                 .addOnFailureListener {
-                    Toast.makeText(this, "Error al actualizar el correo", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error al guardar cambios", Toast.LENGTH_SHORT).show()
                 }
         }
     }
