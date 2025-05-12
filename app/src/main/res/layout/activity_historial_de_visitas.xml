@@ -40,92 +40,71 @@
         android:layout_height="1dp"
         android:layout_marginTop="12dp"
         android:background="#000"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Subtítulo -->
     <TextView
         android:id="@+id/subtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:text="Seleccione Fecha:"
+        android:layout_marginStart="16dp"
+        android:text="Seleccione Rango de Fechas:"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Scroll horizontal para los meses -->
-    <HorizontalScrollView
-        android:id="@+id/scrollMeses"
-        android:layout_width="match_parent"
+    <!-- Fecha Inicial -->
+    <EditText
+        android:id="@+id/fechaInicialEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp"
+        android:hint="Fecha Inicial"
+        android:focusable="false"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:drawableEnd="@drawable/calendar_icon"
+        android:textColorHint="#888888"
+        app:layout_constraintTop_toBottomOf="@id/subtitulo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitulo">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
-
-            <!-- Meses ejemplo -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/MesItem"
-                android:text="Enero" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/MesItem"
-                android:text="Febrero" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/MesItem"
-                android:text="Marzo"
-                android:textColor="#ED4525"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/MesItem"
-                android:text="Abril" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/MesItem"
-                android:text="Mayo" />
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
+    <!-- Fecha Final -->
+    <EditText
+        android:id="@+id/fechaFinalEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Fecha Final"
+        android:focusable="false"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:drawableEnd="@drawable/calendar_icon"
+        android:textColorHint="#888888"
+        app:layout_constraintTop_toBottomOf="@id/fechaInicialEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- CardView para calendario -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardCalendario"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="24dp"
         app:cardBackgroundColor="#ED4525"
         app:cardCornerRadius="32dp"
         app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fechaFinalEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scrollMeses">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -147,9 +126,9 @@
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
         android:background="#000"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardCalendario"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardCalendario" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botón Filtrar -->
     <com.google.android.material.button.MaterialButton
@@ -157,15 +136,14 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:text="Filtrar"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:backgroundTint="#ED4525"
         app:cornerRadius="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardCalendario"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardCalendario" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
