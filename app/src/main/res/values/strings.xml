@@ -2,6 +2,14 @@
     <string name="app_name">ChekinPro</string>
     <string name="retroceso">Flecha de retroceso</string>
     <string name="login_text">¿Ya tienes cuenta? <b>Inicia Sesión</b></string>
+    <string name="desc_flecha_atras">Volver</string>
+    <string name="desc_logo">Logo de CheckinPro</string>
+    <string name="desc_icono_candado">Icono de seguridad</string>
+    <string name="titulo_cambiar_contrasena">Cambiar Contraseña:</string>
+    <string name="hint_contrasena_actual">Contraseña Actual</string>
+    <string name="hint_contrasena_nueva">Contraseña Nueva</string>
+    <string name="hint_confirmar_contrasena">Confirmar Contraseña</string>
+    <string name="btn_cambiar">Cambiar Contraseña:</string>
 
 
 </resources>

@@ -8,7 +8,6 @@
     android:background="#326789"
     tools:context=".CambiarContrasenaActivity">
 
-    <!-- Flecha de retroceso -->
     <ImageView
         android:id="@+id/flechaAtras"
         android:layout_width="24dp"
@@ -16,22 +15,22 @@
         android:layout_marginTop="32dp"
         android:layout_marginStart="24dp"
         android:src="@drawable/flecha"
+        android:contentDescription="@string/desc_flecha_atras"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Título -->
-
-    <!-- Campo: Contraseña Actual -->
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="50dp"
-        android:text="Cambiar Contraseña:"
+        android:text="@string/titulo_cambiar_contrasena"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:ellipsize="end"
+        android:maxLines="1"
         app:layout_constraintBaseline_toBaselineOf="@id/flechaAtras"
         app:layout_constraintStart_toEndOf="@id/flechaAtras"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,10 +39,16 @@
         android:id="@+id/inputActual"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:hint="Contraseña Actual"
+        android:hint="@string/hint_contrasena_actual"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        android:importantForAutofill="yes"
         android:background="@drawable/bg_edittext"
         android:padding="12dp"
-        android:textColorHint="#999999"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
+        android:ellipsize="end"
+        android:maxLines="1"
         app:layout_constraintTop_toBottomOf="@id/flechaAtras"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,15 +56,21 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp" />
 
-    <!-- Campo: Contraseña Nueva -->
     <EditText
         android:id="@+id/inputNueva"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:hint="Contraseña Nueva"
+        android:hint="@string/hint_contrasena_nueva"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        android:importantForAutofill="yes"
         android:background="@drawable/bg_edittext"
         android:padding="12dp"
-        android:textColorHint="#999999"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
+        android:ellipsize="end"
+        android:maxLines="1"
+
         app:layout_constraintTop_toBottomOf="@id/inputActual"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,15 +78,18 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp" />
 
-    <!-- Campo: Confirmar Contraseña -->
     <EditText
         android:id="@+id/inputConfirmar"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:hint="Confirmar Contraseña"
+        android:hint="@string/hint_confirmar_contrasena"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        android:importantForAutofill="yes"
         android:background="@drawable/bg_edittext"
         android:padding="12dp"
-        android:textColorHint="#999999"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
         app:layout_constraintTop_toBottomOf="@id/inputNueva"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,12 +97,11 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp" />
 
-    <!-- Botón Cambiar -->
     <Button
         android:id="@+id/btnCambiar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cambiar Contraseña"
+        android:text="@string/btn_cambiar"
         android:textColor="#FFFFFF"
         android:backgroundTint="#ED4525"
         android:layout_marginTop="24dp"
@@ -96,25 +109,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Logo -->
     <ImageView
         android:id="@+id/logoApp"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:src="@drawable/logo"
+        android:contentDescription="@string/desc_logo"
         android:scaleType="fitCenter"
         app:layout_constraintTop_toBottomOf="@id/btnCambiar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Imagen inferior -->
     <ImageView
         android:id="@+id/imagenCandado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:src="@drawable/contrasena"
+        android:contentDescription="@string/desc_icono_candado"
         android:scaleType="centerInside"
         app:layout_constraintTop_toBottomOf="@id/logoApp"
         app:layout_constraintBottom_toBottomOf="parent"
