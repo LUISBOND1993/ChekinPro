@@ -6,6 +6,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RegistroDeVisitantes : AppCompatActivity() {
@@ -65,7 +66,8 @@ class RegistroDeVisitantes : AppCompatActivity() {
                 "conjunto" to conjunto,
                 "placa" to placa,
                 "tipoUsuario" to "Visitante",
-                "fechaRegistro" to System.currentTimeMillis()
+                "fechaRegistro" to Timestamp.now(),
+                "estado" to "En curso"
             )
 
             db.collection("visitante_rapido")

@@ -1,77 +1,106 @@
 package com.example.chekinpro
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.Timestamp
+import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PanelCobrosActivity : AppCompatActivity() {
 
-    private var visitanteSeleccionado: String? = null
-    private var placaSeleccionada: String? = null
-    private var cobroSeleccionado: String? = null
+    private lateinit var txtFechaIngreso: TextView
+    private lateinit var txtFechaSalida: TextView
+    private lateinit var txtDuracion: TextView
+    private lateinit var txtTotal: TextView
+    private lateinit var btnConfirmarSalida: Button
+
+    private lateinit var db: FirebaseFirestore
+    private var visitanteId: String? = null
+    private var tipo: String? = null
+    private var fechaIngreso: Timestamp? = null
+    private var coleccion: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.panel_cobros)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        txtFechaIngreso = findViewById(R.id.valorFechaIngreso)
+        txtFechaSalida = findViewById(R.id.valorFechaSalida)
+        txtDuracion = findViewById(R.id.valorDuracion)
+        txtTotal = findViewById(R.id.valorTotal)
+        btnConfirmarSalida = findViewById(R.id.btnConfirmarSalida)
+
+        db = FirebaseFirestore.getInstance()
+
+        visitanteId = intent.getStringExtra("id")
+        tipo = intent.getStringExtra("tipo")
+
+        coleccion = when (tipo) {
+            "PreRegistro" -> "pre-registro-visitantes"
+            "Rapido" -> "visitante_rapido"
+            else -> ""
         }
 
-        val btnRetroceso = findViewById<ImageView>(R.id.retroceso)
-        btnRetroceso.setOnClickListener {
-            val intent = Intent(this, Menu::class.java)
-            startActivity(intent)
+        if (visitanteId != null && coleccion.isNotEmpty()) {
+            cargarDatosVisitante()
+        } else {
+            Toast.makeText(this, "Datos inválidos", Toast.LENGTH_SHORT).show()
             finish()
         }
 
-        val tarjeta1 = findViewById<LinearLayout>(R.id.tarjeta1)
-        val tarjeta2 = findViewById<LinearLayout>(R.id.tarjeta2)
-        val tarjeta3 = findViewById<LinearLayout>(R.id.tarjeta3)
-
-        tarjeta1.setOnClickListener {
-            visitanteSeleccionado = "Ricardo Suarez Bonilla"
-            placaSeleccionada = "RKL732"
-            cobroSeleccionado = "$3.600"
-            Toast.makeText(this, "Seleccionaste visitante 1", Toast.LENGTH_SHORT).show()
-        }
-
-        tarjeta2.setOnClickListener {
-            visitanteSeleccionado = "Ricardo Suarez Bonilla"
-            placaSeleccionada = "RKL732"
-            cobroSeleccionado = "$5.600"
-            Toast.makeText(this, "Seleccionaste visitante 2", Toast.LENGTH_SHORT).show()
-        }
-
-        tarjeta3.setOnClickListener {
-            visitanteSeleccionado = "Ricardo Suarez Bonilla"
-            placaSeleccionada = "RKL732"
-            cobroSeleccionado = "$5.600"
-            Toast.makeText(this, "Seleccionaste visitante 3", Toast.LENGTH_SHORT).show()
-        }
-
-        val btnRegistrarSalida = findViewById<Button>(R.id.btnRegistrarSalida)
-        btnRegistrarSalida.setOnClickListener {
-            if (visitanteSeleccionado != null) {
-                val intent = Intent(this, FacturacionYCobroActivity::class.java)
-                intent.putExtra("visitante", visitanteSeleccionado)
-                intent.putExtra("placa", placaSeleccionada)
-                intent.putExtra("cobro", cobroSeleccionado)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, "Selecciona un visitante primero", Toast.LENGTH_SHORT).show()
-            }
+        btnConfirmarSalida.setOnClickListener {
+            confirmarSalida()
         }
     }
+
+    private fun cargarDatosVisitante() {
+        db.collection(coleccion).document(visitanteId!!)
+            .get()
+            .addOnSuccessListener { doc ->
+                fechaIngreso = doc.getTimestamp("fechaRegistro")
+
+                val fechaSalida = Timestamp.now()
+
+                // Mostrar fechas
+                val sdf = SimpleDateFormat("dd MMM yyyy, HH:mm:ss", Locale.getDefault())
+                val ingresoTexto = sdf.format(fechaIngreso?.toDate())
+                val salidaTexto = sdf.format(fechaSalida.toDate())
+
+                txtFechaIngreso.text = ingresoTexto
+                txtFechaSalida.text = salidaTexto
+
+                // Calcular duración
+                val duracionMin = calcularDuracionMinutos(fechaIngreso!!, fechaSalida)
+                txtDuracion.text = duracionMin.toString()
+
+                // Calcular total
+                val total = duracionMin * 30
+                txtTotal.text = "$${total} COP"
+
+            }.addOnFailureListener {
+                Toast.makeText(this, "Error al cargar visitante", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+    }
+
+    private fun calcularDuracionMinutos(inicio: Timestamp, fin: Timestamp): Long {
+        val diffMillis = fin.toDate().time - inicio.toDate().time
+        return diffMillis / 60000
+    }
+
+    private fun confirmarSalida() {
+        db.collection(coleccion).document(visitanteId!!)
+            .update("estado", "Finalizado")
+            .addOnSuccessListener {
+                Toast.makeText(this, "Salida registrada exitosamente", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Error al registrar salida", Toast.LENGTH_SHORT).show()
+            }
+    }
 }
-
-
-

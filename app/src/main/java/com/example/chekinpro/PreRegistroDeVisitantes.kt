@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 
 class PreRegistroDeVisitantes : AppCompatActivity() {
@@ -52,15 +53,16 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
                 "telefono" to telefonoVal,
                 "placa" to placaVal,
                 "torre" to torreVal,
-                "apto" to aptoVal
+                "apto" to aptoVal,
+                "fechaRegistro" to Timestamp.now(),
+                "estado" to "En curso"
             )
 
-            firestore.collection("pre-registro-visitantes")
+            firestore.collection("pre_registro_visitantes")
                 .add(visitante)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Preregistro exitoso", Toast.LENGTH_SHORT).show()
 
-                    // Limpiar campos
                     nombre.text.clear()
                     documento.text.clear()
                     telefono.text.clear()
@@ -68,7 +70,6 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
                     torre.text.clear()
                     apto.text.clear()
 
-                    // Volver al menú
                     val intent = Intent(this, Menu::class.java)
                     startActivity(intent)
                     finish()
@@ -79,4 +80,3 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
         }
     }
 }
-

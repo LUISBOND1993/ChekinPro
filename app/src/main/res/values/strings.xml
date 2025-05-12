@@ -10,6 +10,9 @@
     <string name="hint_contrasena_nueva">Contraseña Nueva</string>
     <string name="hint_confirmar_contrasena">Confirmar Contraseña</string>
     <string name="btn_cambiar">Cambiar Contraseña:</string>
+    <string name="titulo_solicitudes">Solicitudes en Curso</string>
+    <string name="subtitulo_solicitudes">Lista de solicitudes en curso</string>
+
 
 
 </resources>
