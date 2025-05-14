@@ -12,6 +12,22 @@
     <string name="btn_cambiar">Cambiar Contraseña:</string>
     <string name="titulo_solicitudes">Solicitudes en Curso</string>
     <string name="subtitulo_solicitudes">Lista de solicitudes en curso</string>
+    <string name="Panel_title">Panel de Cobros</string>
+    <string name="fecha_ing">Fecha de ingreso:</string>
+    <string name="valor_fecha_ing">11 mayo 2025, 9:12 p.m.</string>
+    <string name="fecha_sal">Fecha de Salida:</string>
+    <string name="valor_fecha_sal">Automática</string>
+    <string name="duracion">Duración (min):</string>
+    <string name="valor_duracion">0</string>
+    <string name="total_pagar">Total a pagar:</string>
+    <string name="moneda">$0 COP</string>
+    <string name="confirma_salida">Confirmar Salida</string>
+    <string name="logo_app">Logo CheckinPro</string>
+
+
+    Confirmar Salida
+
+
 
 
 
