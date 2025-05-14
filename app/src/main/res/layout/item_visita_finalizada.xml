@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:orientation="vertical"
-        android:background="@color/azul_fondo">
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/txtNombre"
@@ -37,6 +37,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Torre 1 - Apto 302"
+            android:textColor="#444"/>
+
+        <TextView
+            android:id="@+id/txtConjunto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conjunto: Aliso"
             android:textColor="#444"/>
 
         <TextView
@@ -76,5 +83,9 @@
             android:text="Tipo: Registro Rápido"
             android:textColor="#888"
             android:textStyle="italic"/>
+
     </LinearLayout>
+
+
+
 </androidx.cardview.widget.CardView>

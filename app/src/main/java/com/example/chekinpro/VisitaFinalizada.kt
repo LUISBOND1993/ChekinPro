@@ -12,5 +12,6 @@ data class VisitaFinalizada(
     val fechaSalida: Date = Date(),
     val tipo: String = "",
     val totalMinutos: Long = 0,
-    val totalPago: Long = 0
+    val totalPago: Long = 0,
+    val conjunto: String = ""
 )

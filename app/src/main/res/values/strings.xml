@@ -107,6 +107,7 @@
     <string name="label_visitante">Visitante:</string>
     <string name="nombre_visitante_ejemplo">Ricardo Suarez Bonilla</string>
     <string name="label_cobro">Cobro:</string>
+    <string name="exportar">Exportar a CSV</string>
 
 
 
