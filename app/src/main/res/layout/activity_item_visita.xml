@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/azul_fondo">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerVisitas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="8dp"
+        android:contentDescription="Listado de visitas finalizadas" />
+
+    <Button
+        android:id="@+id/btnExportarCSV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exportar"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

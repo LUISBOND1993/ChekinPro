@@ -90,7 +90,7 @@
     <string name="desc_panel_cobros">Panel de cobros</string>
     <string name="desc_historial">Historial de visitas y cobros</string>
     <string name="desc_configuracion">Configuración de cuenta</string>
-    <string name="logo_app">Logo de la aplicación</string>
+    <string name="logo_app___">Logo de la aplicación</string>
     <string name="desc_fondo_edificio">Imagen de fondo del edificio</string>
     <string name="desc_icono_sesion">Icono de sesión</string>
     <string name="desc_pre_registro">Pre-registro de visitantes</string>
@@ -107,6 +107,7 @@
     <string name="label_visitante">Visitante:</string>
     <string name="nombre_visitante_ejemplo">Ricardo Suarez Bonilla</string>
     <string name="label_cobro">Cobro:</string>
+    <string name="exportar">Exportar a CSV</string>
 
 
 
