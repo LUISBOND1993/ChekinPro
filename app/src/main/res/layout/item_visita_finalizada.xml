@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del visitante"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/txtPlaca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Placa: ABC123"
+            android:textColor="#444"/>
+
+        <TextView
+            android:id="@+id/txtTorreApto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Torre 1 - Apto 302"
+            android:textColor="#444"/>
+
+        <TextView
+            android:id="@+id/txtFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingreso: 10/05/2025 14:15"
+            android:textColor="#444"/>
+
+        <TextView
+            android:id="@+id/txtFechaSalida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salida: 10/05/2025 15:02"
+            android:textColor="#444"/>
+
+        <TextView
+            android:id="@+id/txtDuracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duración: 47 min"
+            android:textColor="#444"/>
+
+        <TextView
+            android:id="@+id/txtTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: $1410 COP"
+            android:textColor="#E74C3C"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/txtTipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo: Registro Rápido"
+            android:textColor="#888"
+            android:textStyle="italic"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

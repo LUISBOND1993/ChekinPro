@@ -93,8 +93,15 @@ class PanelCobrosActivity : AppCompatActivity() {
     }
 
     private fun confirmarSalida() {
+        val fechaSalida = com.google.firebase.Timestamp.now()
+
+        val datosActualizados = mapOf(
+            "estado" to "Finalizado",
+            "fechaSalida" to fechaSalida
+        )
+
         db.collection(coleccion).document(visitanteId!!)
-            .update("estado", "Finalizado")
+            .update(datosActualizados)
             .addOnSuccessListener {
                 Toast.makeText(this, "Salida registrada exitosamente", Toast.LENGTH_SHORT).show()
                 finish()
@@ -103,4 +110,5 @@ class PanelCobrosActivity : AppCompatActivity() {
                 Toast.makeText(this, "Error al registrar salida", Toast.LENGTH_SHORT).show()
             }
     }
+
 }

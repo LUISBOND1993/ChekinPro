@@ -29,7 +29,7 @@ class ListaSolicitudesActivity : AppCompatActivity() {
         listaSolicitudes.clear()
 
         // Obtener desde "pre-registro-visitantes"
-        db.collection("pre-registro-visitantes")
+        db.collection("pre_registro_visitantes")
             .whereEqualTo("estado", "En curso")
             .get()
             .addOnSuccessListener { documentos1 ->
