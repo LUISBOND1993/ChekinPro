@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import androidx.core.content.edit
 
 class Login : AppCompatActivity() {
 
@@ -41,7 +42,10 @@ class Login : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // Guardar sesión en SharedPreferences
                         val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
-                        prefs.edit().putBoolean("usuarioLogueado", true).apply()
+                        prefs.edit {
+                            putBoolean("usuarioLogueado", true)
+                        }
+
 
                         // Ir al menú principal
                         val intent = Intent(this, Menu::class.java)

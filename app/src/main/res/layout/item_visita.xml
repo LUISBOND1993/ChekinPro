@@ -26,12 +26,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="50dp"
         android:gravity="center_vertical"
-        android:text="Historial de visitantes"
+        android:text="@string/label_historial_visitantes"
         android:textColor="#FF000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/retroceso"
         app:layout_constraintTop_toBottomOf="@id/retroceso" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="200dp"
             android:layout_marginEnd="16dp"
-            android:text="13 resultados"
+            android:text="@string/texto_resultados"
             android:textColor="#FF000000"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +105,7 @@
                         android:id="@+id/ovalVisita"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Visitante:"
+                        android:text="@string/label_visitante"
                         android:textColor="#FF000000"
                         android:textSize="14sp" />
 
@@ -113,9 +114,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="70dp"
-                        android:text="Ricardo Suarez Bonilla"
+                        android:text="@string/nombre_visitante_ejemplo"
                         android:textColor="#FFFFFFFF"
                         android:textSize="14sp" />
+
                 </LinearLayout>
 
                 <!-- LinearLayout para la "Placa" -->
@@ -128,7 +130,7 @@
                         android:id="@+id/ovalPlaca"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Placa:"
+                        android:text="@string/label_placa"
                         android:textColor="#FF000000"
                         android:textSize="14sp" />
 

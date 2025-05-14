@@ -22,9 +22,9 @@
             android:id="@+id/imgFondo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToOutline="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/fondo_edificio" /> <!-- Agregado para respetar las esquinas redondeadas -->
+            android:src="@drawable/fondo_edificio"
+            android:contentDescription="@string/desc_fondo_edificio" />
     </androidx.cardview.widget.CardView>
 
     <ImageView
@@ -33,10 +33,12 @@
         android:layout_height="241dp"
         android:scaleType="centerInside"
         android:src="@drawable/logo"
+        android:contentDescription="@string/logo_app"
         app:layout_constraintBottom_toBottomOf="@+id/cardFondo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardFondo" />
+
     <LinearLayout
         android:id="@+id/layoutUsuario"
         android:layout_width="wrap_content"
@@ -54,20 +56,20 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/icono_sesion"
-            android:contentDescription="Icono de sesión"
-            android:layout_marginStart="24dp"/>
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/desc_icono_sesion" />
 
         <TextView
             android:id="@+id/textoUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hola"
+            android:text="@string/saludo_usuario"
             android:textColor="@android:color/white"
             android:textSize="14sp"
             android:layout_marginStart="10dp"
             android:textStyle="bold" />
-    </LinearLayout>
 
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardBotonera"
@@ -101,18 +103,17 @@
                 android:clickable="true"
                 android:focusable="true">
 
-
-            <ImageView
+                <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/pre_registro" />
+                    android:src="@drawable/pre_registro"
+                    android:contentDescription="@string/desc_pre_registro" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:fontWeight="600"
-                    android:text="Pre-Registro de Visitantes"
+                    android:text="@string/label_pre_registro"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -127,22 +128,23 @@
                 android:layout_marginBottom="10dp"
                 android:padding="8dp">
 
-
-            <ImageView
+                <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/qr" />
+                    android:src="@drawable/qr"
+                    android:contentDescription="@string/desc_registro_rapido" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:fontWeight="600"
-                    android:text="Registro Rápido"
+                    android:text="@string/label_registro_rapido"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:textStyle="bold" />
+
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/btnPanelCobros"
                 android:layout_width="209dp"
@@ -152,20 +154,21 @@
                 android:layout_marginBottom="10dp"
                 android:padding="8dp">
 
-
                 <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/automovil" />
+                    android:src="@drawable/automovil"
+                    android:contentDescription="@string/desc_panel_cobros" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Panel de Cobros"
+                    android:text="@string/label_panel_cobros"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -177,22 +180,22 @@
                 android:layout_marginBottom="10dp"
                 android:padding="8dp">
 
-
-            <ImageView
+                <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/historial_de_transacciones" />
+                    android:src="@drawable/historial_de_transacciones"
+                    android:contentDescription="@string/desc_historial" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Historial de Visitas y Cobros"
+                    android:text="@string/label_historial"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-            </LinearLayout>
 
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/btnConfiguracion"
@@ -202,23 +205,22 @@
                 android:padding="8dp"
                 android:gravity="center_vertical">
 
-
-            <ImageView
+                <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/configuracion_cuenta" />
+                    android:src="@drawable/configuracion_cuenta"
+                    android:contentDescription="@string/desc_configuracion" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Configuracion de Cuenta"
+                    android:text="@string/label_configuracion"
                     android:textColor="#000000"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

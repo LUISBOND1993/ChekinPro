@@ -14,7 +14,7 @@
         android:layout_height="40dp"
         android:layout_gravity="start"
         android:src="@drawable/flecha"
-        android:contentDescription="Flecha de retroceso"
+        android:contentDescription="@string/desc_flecha_retroceso"
         android:layout_marginBottom="8dp" />
 
     <!-- Título -->
@@ -22,7 +22,7 @@
         android:id="@+id/textFacturacionYCobro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Facturación y Cobro"
+        android:text="@string/titulo_facturacion_cobro"
         android:textSize="18sp"
         android:textColor="#000"
         android:layout_gravity="center_horizontal"
@@ -57,18 +57,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Nombre del conjunto:"
+                android:text="@string/label_nombre_conjunto"
                 android:textColor="#000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/ovalNombreConjuntoProto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Portal el Virrey"
+                android:text="@string/nombre_conjunto_portal"
                 android:textColor="#FFF"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <!-- Placa -->
@@ -83,18 +84,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Placa:"
+                android:text="@string/label_placa_conjunto"
                 android:textColor="#000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/ovalNumeroPlaca"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="RKL732"
+                android:text="@string/placa_numero"
                 android:textColor="#FFF"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <!-- Puesto -->
@@ -109,18 +111,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Puesto:"
+                android:text="@string/label_puesto"
                 android:textColor="#000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/ovalPuestoProto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Puesto 30"
+                android:text="@string/puesto_valor"
                 android:textColor="#FFF"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <!-- Nombre del residente -->
@@ -135,18 +138,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Nombre del residente:"
+                android:text="@string/label_nombre_residente"
                 android:textColor="#000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/ovalNombreResidenteProto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ricardo Suarez Bonilla"
+                android:text="@string/nombre_residente_valor"
                 android:textColor="#FFF"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <!-- Nombre del visitante -->
@@ -161,18 +165,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Nombre del visitante:"
+                android:text="@string/label_nombre_visitante"
                 android:textColor="#000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/ovalNombreVisitanteProto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Carlos Sutachan"
+                android:text="@string/nombre_visitante_valor"
                 android:textColor="#FFF"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <!-- Ingreso -->
@@ -187,18 +192,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ingreso:"
+                android:text="@string/label_ingreso"
                 android:textColor="#000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/ovalIngreso"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="04-02-2025 17:40:00 p.m."
+                android:text="@string/valor_ingreso"
                 android:textColor="#FFF"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <!-- Salida -->
@@ -213,18 +219,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Salida:"
+                android:text="@string/label_salida"
                 android:textColor="#000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/ovalSalidaProto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="04-02-2025 19:00:00 p.m."
+                android:text="@string/valor_salida"
                 android:textColor="#FFF"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <!-- Total Cobro -->
@@ -239,18 +246,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Total Cobro:"
+                android:text="@string/label_total_cobro"
                 android:textColor="#000"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/ovalTotalCobroProto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="$3600"
+                android:text="@string/valor_total_cobro"
                 android:textColor="#FFF"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -262,7 +270,8 @@
         android:src="@drawable/check_circle"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        android:contentDescription="Ícono check de confirmación" />
+        android:contentDescription="@string/desc_check" />
+
 
     <!-- Línea separadora inferior -->
     <View
