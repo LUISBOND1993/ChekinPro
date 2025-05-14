@@ -40,7 +40,7 @@ class PanelCobrosActivity : AppCompatActivity() {
         tipo = intent.getStringExtra("tipo")
 
         coleccion = when (tipo) {
-            "PreRegistro" -> "pre-registro-visitantes"
+            "PreRegistro" -> "pre_registro_visitantes"
             "Rapido" -> "visitante_rapido"
             else -> ""
         }
