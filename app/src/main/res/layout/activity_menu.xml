@@ -33,7 +33,7 @@
         android:layout_height="241dp"
         android:scaleType="centerInside"
         android:src="@drawable/logo"
-        android:contentDescription="@string/logo_app___"
+        android:contentDescription="@string/logo_app__"
         app:layout_constraintBottom_toBottomOf="@+id/cardFondo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

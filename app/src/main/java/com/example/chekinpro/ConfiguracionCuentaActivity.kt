@@ -52,7 +52,7 @@ class ConfiguracionCuentaActivity : AppCompatActivity() {
                         inputTelefono.setText(document.getString("telefono") ?: "")
                         inputPlaca.setText(document.getString("placa") ?: "")
                         inputTorre.setText(document.getString("torre") ?: "")
-                        inputApto.setText(document.getString("apto") ?: "")
+                        inputApto.setText(document.getString("apartamento") ?: "")
                     }
                 }
                 .addOnFailureListener {
@@ -65,9 +65,9 @@ class ConfiguracionCuentaActivity : AppCompatActivity() {
             val telefono = inputTelefono.text.toString().trim()
             val placa = inputPlaca.text.toString().trim()
             val torre = inputTorre.text.toString().trim()
-            val apto = inputApto.text.toString().trim()
+            val apartamento = inputApto.text.toString().trim()
 
-            if (telefono.isEmpty() || placa.isEmpty() || torre.isEmpty() || apto.isEmpty()) {
+            if (telefono.isEmpty() || placa.isEmpty() || torre.isEmpty() || apartamento.isEmpty()) {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -81,7 +81,7 @@ class ConfiguracionCuentaActivity : AppCompatActivity() {
                 "telefono" to telefono,
                 "placa" to placa,
                 "torre" to torre,
-                "apto" to apto
+                "apartamento" to apartamento
             )
 
             db.collection("usuarios").document(user.uid)

@@ -106,6 +106,8 @@
     <string name="nombre_visitante_ejemplo">Ricardo Suarez Bonilla</string>
     <string name="label_cobro">Cobro:</string>
     <string name="exportar">Exportar a CSV</string>
+    <string name="logo_app__">Logo de la aplicación</string>
+    <string name="logo_app">Logo de la aplicación</string>
 
 
 </resources>

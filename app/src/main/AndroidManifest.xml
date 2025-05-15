@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.chekinpro">
+
     <!-- Permiso para escritura en almacenamiento externo -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,32 +13,13 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="ChekinPro"
-        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChekinPro"
-        tools:targetApi="31">
-        <activity
-            android:name=".Olvidaste_contrasenia_Final"
-            android:exported="false">
+        tools:targetApi="31"
+        android:requestLegacyExternalStorage="true">
 
-        </activity>
-        <activity
-            android:name=".Olvidaste_contrasenia_three"
-            android:exported="false">
-
-
-        </activity>
-        <activity
-            android:name=".Olvidaste_contrasenia_two"
-            android:exported="false">
-
-        </activity>
-        <activity
-            android:name=".Olvidaste_contrasenia"
-            android:exported="false">
-
-        </activity> <!-- FileProvider para compartir archivos -->
+        <!-- FileProvider para compartir archivos -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -48,60 +30,29 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity
-            android:name=".ListaSolicitudesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+        <activity android:name=".ListaSolicitudesActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".SignUp"
-            android:exported="false" />
-        <activity
-            android:name=".Menu"
-            android:exported="false" />
-        <activity
-            android:name=".ConfirmacionAjustes"
-            android:exported="false" />
-        <activity
-            android:name=".ConfirmacionRegistroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ConfirmacionCobroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CambiarContrasenaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ConfiguracionCuentaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PanelCobrosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FacturacionYCobroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ItemVisitaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HistorialDeVisitas"
-            android:exported="false" />
-        <activity
-            android:name=".PreRegistroDeVisitantes"
-            android:exported="false" />
-        <activity
-            android:name=".RegistroDeVisitantes"
-            android:exported="false" />
+        <activity android:name=".Login" android:exported="false" />
+        <activity android:name=".SignUp" android:exported="false" />
+        <activity android:name=".Menu" android:exported="false" />
+        <activity android:name=".ConfirmacionAjustes" android:exported="false" />
+        <activity android:name=".ConfirmacionRegistroActivity" android:exported="false" />
+        <activity android:name=".ConfirmacionCobroActivity" android:exported="false" />
+        <activity android:name=".CambiarContrasenaActivity" android:exported="false" />
+        <activity android:name=".ConfiguracionCuentaActivity" android:exported="false" />
+        <activity android:name=".PanelCobrosActivity" android:exported="false" />
+        <activity android:name=".FacturacionYCobroActivity" android:exported="false" />
+        <activity android:name=".ItemVisitaActivity" android:exported="false" />
+        <activity android:name=".HistorialDeVisitas" android:exported="false" />
+        <activity android:name=".PreRegistroDeVisitantes" android:exported="false" />
+        <activity android:name=".RegistroDeVisitantes" android:exported="false" />
+
     </application>
 
 </manifest>
+
