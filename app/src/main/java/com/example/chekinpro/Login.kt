@@ -5,11 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
 import androidx.core.content.edit
+import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
 
@@ -26,6 +27,13 @@ class Login : AppCompatActivity() {
         val emailInput = findViewById<EditText>(R.id.emailInput)
         val passwordInput = findViewById<EditText>(R.id.passwordInput)
         val buttonLogin = findViewById<Button>(R.id.loginButton2)
+        val forgotPassword = findViewById<TextView>(R.id.forgotPassword)
+
+        // 🔁 Ir a recuperación de contraseña
+        forgotPassword.setOnClickListener {
+            val intent = Intent(this, Olvidaste_contrasenia::class.java)
+            startActivity(intent)
+        }
 
         buttonLogin.setOnClickListener {
             val email = emailInput.text.toString().trim()
@@ -46,14 +54,13 @@ class Login : AppCompatActivity() {
                             putBoolean("usuarioLogueado", true)
                         }
 
-
                         // Ir al menú principal
                         val intent = Intent(this, Menu::class.java)
                         startActivity(intent)
                         finish()
                     } else {
                         Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
-                        Log.e("AUTH", "❌ Login fallido: ${task.exception?.message}")
+                        Log.e("AUTH", "❌ Login fallido: \${task.exception?.message}")
                     }
                 }
         }

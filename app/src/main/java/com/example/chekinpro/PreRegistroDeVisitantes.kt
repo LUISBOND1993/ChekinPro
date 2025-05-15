@@ -17,6 +17,7 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
     private lateinit var placa: EditText
     private lateinit var torre: EditText
     private lateinit var apto: EditText
+    private lateinit var conjunto: EditText
     private lateinit var btnRegistrar: MaterialButton
     private lateinit var firestore: FirebaseFirestore
 
@@ -30,6 +31,7 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
         placa = findViewById(R.id.editTextPlaca)
         torre = findViewById(R.id.editTextTorre)
         apto = findViewById(R.id.editTextApto)
+        conjunto = findViewById(R.id.editTextConjunto)
         btnRegistrar = findViewById(R.id.btnRegistrar)
 
         firestore = FirebaseFirestore.getInstance()
@@ -41,6 +43,7 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
             val placaVal = placa.text.toString().trim()
             val torreVal = torre.text.toString().trim()
             val aptoVal = apto.text.toString().trim()
+            val conjuntoVal = conjunto.text.toString().trim()
 
             if (nombreVal.isEmpty() || documentoVal.isEmpty() || telefonoVal.isEmpty()) {
                 Toast.makeText(this, "Por favor, completa todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
@@ -54,6 +57,7 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
                 "placa" to placaVal,
                 "torre" to torreVal,
                 "apto" to aptoVal,
+                "conjunto" to conjuntoVal,
                 "fechaRegistro" to Timestamp.now(),
                 "estado" to "En curso"
             )
@@ -69,9 +73,9 @@ class PreRegistroDeVisitantes : AppCompatActivity() {
                     placa.text.clear()
                     torre.text.clear()
                     apto.text.clear()
+                    conjunto.text.clear()
 
-                    val intent = Intent(this, Menu::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, Menu::class.java))
                     finish()
                 }
                 .addOnFailureListener {

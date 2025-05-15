@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PreRegistroDeVisitantes">
+    tools:context=".Olvidaste_contrasenia_three">
 
     <FrameLayout
         android:id="@+id/fondoInferior"
@@ -23,6 +23,18 @@
             android:clipToOutline="true"
             android:scaleType="centerCrop"
             android:src="@drawable/edificio" />
+
+        <ImageView
+            android:id="@+id/logoApp"
+            android:layout_width="435dp"
+            android:layout_height="176dp"
+            android:layout_marginTop="120dp"
+            android:contentDescription="@string/logo_app___"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </FrameLayout>
 
     <androidx.cardview.widget.CardView
@@ -30,18 +42,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="24dp"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="32dp"
-        app:cardElevation="12dp"
+        app:cardElevation="34dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="24dp">
 
@@ -51,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:paddingBottom="24dp"
-                android:text="Pre-Registro de Visitantes:"
+                android:text="¿Olvidaste la Contraseña?"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -69,15 +81,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Nombre Visitante:" />
+                android:text="Contraseña" />
 
             <EditText
-                android:id="@+id/editTextNombre"
+                android:id="@+id/editTextNombreOlv"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/edittext_background"
-                android:hint="Nombre"
+                android:hint="Contraseña"
                 android:inputType="textPersonName"
                 android:padding="12dp"
                 android:textColorHint="#999999" />
@@ -85,98 +97,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="C.C:" />
+                android:layout_marginTop="12dp"
+                android:text="Confirmar Contraseña" />
 
             <EditText
-                android:id="@+id/editTextDocumento"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Documento"
-                android:inputType="text"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Telefono:" />
-
-            <EditText
-                android:id="@+id/editTextTelefono"
+                android:id="@+id/editTextNombre"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/edittext_background"
-                android:hint="Telefono"
-                android:inputType="phone"
+                android:hint="Contraseña"
+                android:inputType="textPersonName"
                 android:padding="12dp"
                 android:textColorHint="#999999" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PLACA:" />
-
-            <EditText
-                android:id="@+id/editTextPlaca"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="placa del vehículo"
-                android:inputType="text"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Torre:" />
-
-            <EditText
-                android:id="@+id/editTextTorre"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Torre"
-                android:inputType="text"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Apto:" />
-
-            <EditText
-                android:id="@+id/editTextApto"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Apartamento"
-                android:inputType="text"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Conjunto:" />
-
-            <EditText
-                android:id="@+id/editTextConjunto"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/edittext_background"
-                android:hint="Conjunto"
-                android:inputType="text"
-                android:padding="12dp"
-                android:textColorHint="#999999" />
 
             <!-- ✅ Botón corregido -->
             <com.google.android.material.button.MaterialButton
@@ -185,13 +119,13 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Registrar Visitante"
+                android:text="Cambiar Contraseña"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                app:backgroundTint="#ED4525"
+                app:backgroundTint="@color/naranja"
                 app:cornerRadius="32dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
