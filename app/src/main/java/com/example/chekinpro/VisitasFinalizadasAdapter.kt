@@ -28,6 +28,8 @@ class VisitasFinalizadasAdapter(
         val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
         holder.txtFecha.text = "Ingreso: ${sdf.format(visita.fechaRegistro)}"
         holder.txtFechaSalida.text = "Salida: ${sdf.format(visita.fechaSalida)}"
+        holder.txtConjunto.text = "Conjunto: ${visita.conjunto}"
+
 
         holder.txtDuracion.text = "Duración: ${visita.totalMinutos} min"
         holder.txtTotal.text = "Total: $${visita.totalPago} COP"
@@ -46,5 +48,7 @@ class VisitasFinalizadasAdapter(
         val txtDuracion: TextView = view.findViewById(R.id.txtDuracion)
         val txtTotal: TextView = view.findViewById(R.id.txtTotal)
         val txtTipo: TextView = view.findViewById(R.id.txtTipo)
+        val txtConjunto: TextView = itemView.findViewById(R.id.txtConjunto)
+
     }
 }
