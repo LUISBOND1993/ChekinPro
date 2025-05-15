@@ -9,6 +9,8 @@ import com.google.android.material.button.MaterialButton
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 
+
+
 class PreRegistroDeVisitantes : AppCompatActivity() {
 
     private lateinit var nombre: EditText
