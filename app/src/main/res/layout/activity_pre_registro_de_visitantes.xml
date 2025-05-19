@@ -45,7 +45,6 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <!-- Título -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -65,12 +64,7 @@
                 android:paddingBottom="24dp" />
 
             <!-- Campos -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Nombre Visitante:" />
-
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Nombre Visitante:" />
             <EditText
                 android:id="@+id/editTextNombre"
                 android:layout_width="match_parent"
@@ -80,29 +74,23 @@
                 android:hint="Nombre"
                 android:inputType="textPersonName"
                 android:padding="12dp"
-                android:textColorHint="#999999" />
+                android:importantForAutofill="yes"
+                android:textColorHint="#666666" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C.C:" />
-
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="C.C:" />
             <EditText
                 android:id="@+id/editTextDocumento"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/edittext_background"
                 android:hint="Documento"
                 android:inputType="text"
                 android:padding="12dp"
-                android:textColorHint="#999999" />
+                android:importantForAutofill="yes"
+                android:textColorHint="#666666" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Telefono:" />
-
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Telefono:" />
             <EditText
                 android:id="@+id/editTextTelefono"
                 android:layout_width="match_parent"
@@ -111,14 +99,11 @@
                 android:background="@drawable/edittext_background"
                 android:hint="Telefono"
                 android:inputType="phone"
+                android:importantForAutofill="yes"
                 android:padding="12dp"
-                android:textColorHint="#999999" />
+                android:textColorHint="#666666" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PLACA:" />
-
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PLACA:" />
             <EditText
                 android:id="@+id/editTextPlaca"
                 android:layout_width="match_parent"
@@ -128,13 +113,9 @@
                 android:hint="placa del vehículo"
                 android:inputType="text"
                 android:padding="12dp"
-                android:textColorHint="#999999" />
+                android:textColorHint="#666666" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Torre:" />
-
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Torre:" />
             <EditText
                 android:id="@+id/editTextTorre"
                 android:layout_width="match_parent"
@@ -143,14 +124,11 @@
                 android:background="@drawable/edittext_background"
                 android:hint="Torre"
                 android:inputType="text"
+                android:importantForAutofill="yes"
                 android:padding="12dp"
-                android:textColorHint="#999999" />
+                android:textColorHint="#666666" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Apto:" />
-
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Apto:" />
             <EditText
                 android:id="@+id/editTextApto"
                 android:layout_width="match_parent"
@@ -159,14 +137,11 @@
                 android:background="@drawable/edittext_background"
                 android:hint="Apartamento"
                 android:inputType="text"
+                android:importantForAutofill="yes"
                 android:padding="12dp"
-                android:textColorHint="#999999" />
+                android:textColorHint="#666666" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Conjunto:" />
-
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Conjunto:" />
             <EditText
                 android:id="@+id/editTextConjunto"
                 android:layout_width="match_parent"
@@ -175,10 +150,10 @@
                 android:background="@drawable/edittext_background"
                 android:hint="Conjunto"
                 android:inputType="text"
+                android:importantForAutofill="yes"
                 android:padding="12dp"
-                android:textColorHint="#999999" />
+                android:textColorHint="#666666" />
 
-            <!-- ✅ Botón corregido -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRegistrar"
                 android:layout_width="match_parent"
@@ -194,4 +169,3 @@
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

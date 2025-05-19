@@ -3,7 +3,6 @@ package com.example.chekinpro
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.widget.Button
@@ -11,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -46,7 +44,11 @@ class ItemVisitaActivity : AppCompatActivity() {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED
             ) {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), REQUEST_PERMISSION_WRITE)
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                    REQUEST_PERMISSION_WRITE
+                )
             } else {
                 exportarCSV()
             }
@@ -62,7 +64,6 @@ class ItemVisitaActivity : AppCompatActivity() {
         }
 
         val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-
         val fechaInicio = Calendar.getInstance().apply {
             time = sdf.parse(fechaInicioStr) ?: Date()
             set(Calendar.HOUR_OF_DAY, 0)
@@ -103,6 +104,7 @@ class ItemVisitaActivity : AppCompatActivity() {
                     return@addOnSuccessListener
                 }
 
+                // Asegura que ambas colecciones se cargan correctamente
                 cargarVisitas("pre_registro_visitantes", "PreRegistro", fechaInicio, fechaFin, torre, apartamento, conjunto)
                 cargarVisitas("visitante_rapido", "Rapido", fechaInicio, fechaFin, torre, apartamento, conjunto)
             }
@@ -121,20 +123,26 @@ class ItemVisitaActivity : AppCompatActivity() {
         apartamento: String,
         conjunto: String
     ) {
-        db.collection(coleccion)
+        val query = db.collection(coleccion)
             .whereEqualTo("estado", "Finalizado")
             .whereEqualTo("torre", torre)
-            .whereEqualTo("apartamento", apartamento)
             .whereEqualTo("conjunto", conjunto)
             .whereGreaterThanOrEqualTo("fechaRegistro", desde)
             .whereLessThanOrEqualTo("fechaRegistro", hasta)
             .orderBy("fechaRegistro", Query.Direction.DESCENDING)
-            .get()
+
+        // Ajustar según el nombre del campo correcto
+        val finalQuery = if (coleccion == "pre_registro_visitantes") {
+            query.whereEqualTo("apto", apartamento)
+        } else {
+            query.whereEqualTo("apartamento", apartamento)
+        }
+
+        finalQuery.get()
             .addOnSuccessListener { result ->
                 for (doc in result) {
                     val fechaIngreso = doc.getDate("fechaRegistro") ?: Date()
                     val fechaSalida = doc.getDate("fechaSalida") ?: Date()
-
                     val duracionMin = (fechaSalida.time - fechaIngreso.time) / 60000
                     val total = duracionMin * 30
 
@@ -143,7 +151,7 @@ class ItemVisitaActivity : AppCompatActivity() {
                         nombre = doc.getString("nombre") ?: "",
                         placa = doc.getString("placa") ?: "",
                         torre = doc.getString("torre") ?: "",
-                        apto = doc.getString("apartamento") ?: "",
+                        apto = doc.getString("apto") ?: doc.getString("apartamento") ?: "",
                         fechaRegistro = fechaIngreso,
                         fechaSalida = fechaSalida,
                         tipo = tipo,
@@ -160,6 +168,7 @@ class ItemVisitaActivity : AppCompatActivity() {
             }
     }
 
+
     private fun exportarCSV() {
         if (visitas.isEmpty()) {
             Toast.makeText(this, "No hay datos para exportar", Toast.LENGTH_SHORT).show()
@@ -168,14 +177,10 @@ class ItemVisitaActivity : AppCompatActivity() {
 
         try {
             val downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-
-// Generar un nombre único basado en fecha y hora (ej: historial_visitas_20240514_212530.csv)
             val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
             val fileName = "historial_visitas_$timestamp.csv"
-
             val file = File(downloadsDir, fileName)
             val writer = FileWriter(file)
-
 
             writer.append("Nombre,Placa,Torre,Apto,Conjunto,Fecha Ingreso,Fecha Salida,Duración (min),Total (COP)\n")
             val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
